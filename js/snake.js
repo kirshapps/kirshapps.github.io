@@ -656,9 +656,9 @@ SNAKE.Board = SNAKE.Board || (function() {
             tmpElm.className = "snake-try-again-dialog";
             
             var tryAgainTxt = document.createElement("div");
-            tryAgainTxt.innerHTML = "JavaScript Snake<p></p>You died :(.<p></p>";
+            tryAgainTxt.innerHTML = "JavaScript Snake<p></p>Hahaha you died :(.<p></p>";
             var tryAgainStart = document.createElement("button");
-            tryAgainStart.appendChild( document.createTextNode("Play Again?"));
+            tryAgainStart.appendChild( document.createTextNode("Fail Again?"));
             
             var reloadGame = function() {
                 tmpElm.style.display = "none";
