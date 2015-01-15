@@ -1,0 +1,173 @@
+<html>
+<head>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+.btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 20px;
+  background: #ffffff;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+#nav {
+  background: #ffffff;
+  width: auto;
+}
+#nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  display: block;
+  zoom: 1;
+}
+#nav ul:after {
+  content: ' ';
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#nav ul li {
+  float: left;
+  display: block;
+  padding: 0;
+}
+#nav ul li a {
+  color: #ff1e00;
+  text-decoration: none;
+  display: block;
+  padding: 15px 25px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  position: relative;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+}
+#nav ul li a:hover {
+  color: black;
+}
+#nav ul li a:hover:before {
+  width: 100%;
+}
+#nav ul li a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: -3px;
+  top: 19px;
+  height: 6px;
+  width: 6px;
+  background: #ffffff;
+  opacity: .5;
+}
+#nav ul li a:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: #333333;
+  -webkit-transition: width .25s;
+  -moz-transition: width .25s;
+  -ms-transition: width .25s;
+  -o-transition: width .25s;
+  transition: width .25s;
+}
+#nav ul li.last > a:after,
+#nav ul li:last-child > a:after {
+  display: none;
+}
+#nav ul li.active a {
+  color: #333333;
+}
+#nav ul li.active a:before {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  #nav ul li {
+    float: none;
+  }
+  #nav ul li a {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #nav ul li a:after {
+    display: none;
+  }
+  #nav ul li a:before {
+    height: 1px;
+    background: #ffffff;
+    width: 100%;
+    opacity: .2;
+  }
+  #nav ul li.last > a:before,
+  #nav ul li:last-child > a:before {
+    display: none;
+  }
+}
+</style>
+<script type="text/javascript">
+var counter = 0;
+function NextFromStart() {
+
+counter++;
+console.log(counter);
+if (counter == 1) {
+document.getElementById('mainText').innerHTML = 'In Canada, we are crazy about hockey. Almost every kid in Canada plays hockey at a young age. Every other sport does not matter ';
+}
+if (counter == 2) {
+document.getElementById('mainText').innerHTML = 'We have a population of  34.88 million people. Which is about four million less than the population of the state of California';
+}
+if (counter == 3) {
+document.getElementById('mainText').innerHTML = 'We have a monthly GDP growth of 0.1% ';
+}
+if (counter == 4) {
+document.getElementById('mainText').innerHTML = '';
+document.getElementById('next').value = '';
+var button = document.getElementById('next');
+button.setAttribute("style","background-color:red; border:red;");
+window.open("canada.html","_self");
+}
+}
+</script>
+</head>
+<body style="background-color:red">
+<a href="canada.html"><img width='100' height='70' src='http://www.xero.com/blog/wp-content/uploads/2013/12/Canadian-flag.jpg'></a>
+<div id='nav'>
+<ul>
+<li> <a href="http://www.girgalicious.com">STARPoint Studios</a></li>
+<li><a href="interactive tutorial.html">Interactive Lesson</a></li>
+<li><a href='http://www.youtube.com'>Youtube</a></li>
+<li><a href='http://www.fifa.com'>Fifa</a></li>
+</ul>
+</div>
+<center><h2 id='mainText' style="color:white;"> Canada is a great country. We are the northest (if that is a word) country in North America. We have warm summers and cold winters which allow time for canadians to experience both temperatures and feeling.</h2></center></br>
+<center><input id='next' type="button" class='btn' value="Next" OnClick="NextFromStart()"></center>
+
+</body>
+</html>

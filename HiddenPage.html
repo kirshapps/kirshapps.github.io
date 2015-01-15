@@ -1,0 +1,41 @@
+<html>
+<head>
+<script>
+
+function check() {
+var inputValue = document.getElementById('text').value;
+var string1 = atob('bXVzaHJvb20=');
+var string2 = atob('TXVzaHJvb20=');
+var string3 = atob('RmFrZSBDaGFsbGVuZ2Uh');
+
+if (inputValue === string1  || inputValue === string2 ) {
+
+document.getElementById('coolstuff').innerHTML = string3;
+}
+else {
+document.getElementById('coolstuff').innerHTML = '';
+}
+}
+
+</script>
+<style>
+ @font-face { font-family:Days ; src: url('28 Days Later.ttf'); } 
+ #coolstuff {
+ font-family:Days;
+ font-size:50px;
+ color:white;
+ }
+</style>
+</head>
+<body style='background-color:red;'>
+<h1 style='color:white'> Hidden Page</h1>
+<h4 id='welcometext' style='color:white;'> You have managed to guide yourself to my hidden page. Congratulations on your accomplishment, your next step will be to solve this question: What kind of room has no doors or windows? </h4>
+<p style='color:white;'> Answer:</p><input type="text" id="text"><input type='button' OnClick='check()' value='Submit'>
+<p id='coolstuff'></p>
+</br>
+</br>
+
+</a>   
+  
+</body>
+</html>
