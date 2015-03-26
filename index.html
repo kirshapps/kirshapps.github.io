@@ -1,208 +1,131 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<head>
-<title>I love Canada</title>
-<style type='text/css'>
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
-#nav {
-  background: #ffffff;
-  width: auto;
-}
-#nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  display: block;
-  zoom: 1;
-}
-#nav ul:after {
-  content: ' ';
-  display: block;
-  font-size: 0;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-#nav ul li {
-  float: left;
-  display: block;
-  padding: 0;
-}
-#nav ul li a {
-  color: #ff1e00;
-  text-decoration: none;
-  display: block;
-  padding: 15px 25px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 14px;
-  position: relative;
-  -webkit-transition: color .25s;
-  -moz-transition: color .25s;
-  -ms-transition: color .25s;
-  -o-transition: color .25s;
-  transition: color .25s;
-}
-#nav ul li a:hover {
-  color: black;
-}
-#nav ul li a:hover:before {
-  width: 100%;
-}
-#nav ul li a:after {
-  content: '';
-  display: block;
-  position: absolute;
-  right: -3px;
-  top: 19px;
-  height: 6px;
-  width: 6px;
-  background: #ffffff;
-  opacity: .5;
-}
-#nav ul li a:before {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 0;
-  background: #333333;
-  -webkit-transition: width .25s;
-  -moz-transition: width .25s;
-  -ms-transition: width .25s;
-  -o-transition: width .25s;
-  transition: width .25s;
-}
-#nav ul li.last > a:after,
-#nav ul li:last-child > a:after {
-  display: none;
-}
-#nav ul li.active a {
-  color: #333333;
-}
-#nav ul li.active a:before {
-  width: 100%;
-}
-@media screen and (max-width: 768px) {
-  #nav ul li {
-    float: none;
-  }
-  #nav ul li a {
-    width: 100%;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  #nav ul li a:after {
-    display: none;
-  }
-  #nav ul li a:before {
-    height: 1px;
-    background: #ffffff;
-    width: 100%;
-    opacity: .2;
-  }
-  #nav ul li.last > a:before,
-  #nav ul li:last-child > a:before {
-    display: none;
-  }
-}
+	<head>
+		<title>Pokaface</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/jquery.scrollgress.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="landing">
 
+		<!-- Header -->
+			<header id="header" class="alt">
+				<h1><a href="index.html">Pokaface by Kirsh Apps</h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Pokaface</a></li>
+						<li>
+							<a href="" class="icon fa-angle-down">Other Projects</a>
+							<ul>
+								<li><a href="generic.html">Mapsnap</a></li>
+								
+								
+							</ul>
+						</li>
+						<li><a href="#cta" class="button">Sign Up</a></li>
+					</ul>
+				</nav>
+			</header>
 
+		<!-- Banner -->
+			<section id="banner">
+				<h2>Pokaface</h2>
+				<p>A simple, but addicting arcade game for IOS</p>
+				<ul class="actions">
+					<li><a href="#cta" class="button special">Sign Up</a></li>
+					<li><a href="#learn" class="button">Learn More</a></li>
+				</ul>
+			</section>
 
-</style>
-<script type='text/javascript'>
-function postAlert() {
-var name = document.getElementById('name').value;
-document.getElementById('para').innerHTML = 'Hi ' + name;
-}
-</script>
-</head>
-<body style="background-color:red;">
+		<!-- Main -->
+			<section id="main" class="container">
+		
+				<section  id="learn" class="box special">
+					<header class="major">
+						<h2><b>Introducing Pokaface</b>
+						<br />
+						Tap the dots to earn points</h2>
+						<p>When you download Pokaface, you will be sucked in to the game</p>
+					</header>
+					<span class="image featured"><img src="images/pic01.png" alt="" /></span>
+				</section>
+						
+				<section class="box special features">
+					<div class="features-row">
+						<section>
+							<span class="icon major fa-bolt accent2"></span>
+							<h3>Fun</h3>
+							<p>Pokaface is incredibly fun. Once you start playing it you, you can't stop. With Pokaface, you get this rush of energy when you play urging you to keep playing, and beat your highscore.</p>
+						</section>
+						<section>
+							<span class="icon major fa-area-chart accent3"></span>
+							<h3>Leaderboards and Acheivments</h3>
+							<p>Pokaface includes a whole lot of features to help you interact with your friends, without even leaving the app. Pokaface includes <b>Leaderboards</b>, <b>Acheivments</b> and even a store to buy stuff to help you out.</p>
+						</section>
+					</div>
+					<div class="features-row">
+						<section>
+							<span class="icon major fa-cloud accent4"></span>
+							<h3>Online Capabilities</h3>
+							<p>Once you've beat that highscore, you want to share it with the world. Using Pokaface, you can share your highscores to <b>Facebook</b>, <b>Twitter</b> and more.</p>
+						</section>
+						
+					</div>
+				</section>
+					
+				<div class="row">
+					
+					
+				</div>
 
-<a href="canada.html"><img width='100' height='70' src='http://www.xero.com/blog/wp-content/uploads/2013/12/Canadian-flag.jpg'></a><div id='nav'>
-<ul>
+			</section>
+			
+		<!-- CTA -->
+			<section id="cta">
+				
+				<h2>The app is on the App Store</h2>
+				<p></p>
+				<p><i><b>Download it now and enjoy!<b/></i></p>
+			<!--	<form action="form.html">
+					<div class="row uniform 50%">
+						<div class="8u 12u(3)">
+							<input type="text" name="email" id="email" placeholder="Name" />
+						</div>
+						<div class="4u 12u(3)">
+							<input type="submit" onClick="" value="Sign Up" class="fit" />
+						</div>
+					</div>
+				</form> -->
+				
+			</section>
+			
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Ezra Kirsh. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
 
-<li> <a href="http://www.girgalicious.com">STARPoint Studios</a></li>
-<li><a href="interactive tutorial.html">Interactive Lesson</a></li>
-<li><a href='http://www.youtube.com'>Youtube</a></li>
-<li><a href='http://www.fifa.com'>Fifa</a></li>
-</ul>
-</div>
-</br>
-</br>
-</br>
-</br>
-
-
-<marquee><h1 style="color:white;"><center>Welcome to Canada</center></h1></marquee>
-<marquee><h2 style="color:white;"><center>We live in Igloos</center></h2></marquee>
-<marquee><h3 style="color:white;"><center>We ride Polar Bears</center></h3></marquee>
-<marquee><h4 style="color:white;"><center>We have a population of -2</center></h4></marquee>
-<marquee><h5 style="color:white;"><center><a style='color:white; text-decoration:none;' href='WICH.html'>Click to start the ultimate challenge</a></center></h5></marquee>
-<marquee><h6 style="color:white;"><center>Welcome to Canada</center></h6></marquee>
-<center><a href="http://dunkindonuts.com/"><img height="250" width="250" src="http://4.bp.blogspot.com/-HvQHfuclUlg/UwPQOcgkDeI/AAAAAAAAEGU/m3VR9k-TlEg/s1600/dunkin-donuts.jpg"></a></center>
-<center><h2>We love our coffee</h2></center>
-</br>
-</br>
-</br>
-</br>
-</br>
-<p style="color:white;"><b>Quick Summary</b></p>
-<p style="color:white;">Canada is a country in the northern part of North America. It is bordered by the United States of America both to the south and to the west (Alaska). By area, Canada is the second largest country in the world. Canada consists of ten provinces and three territories. Ottawa is the capital of Canada.</p>
-</br>
-</br>
-</br>
-<p style="color:white;"><b>History</b></p>
-<p id='para' style="color:white;">Native people lived in what is now Canada for thousands of years before the first Europeans arrived. They are known as the First Nations and the Inuit people. The Métis have part First Nations and part European backgrounds.
-
-The Vikings were the first Europeans known to land in Canada, in what is now Newfoundland, led by the Viking explorer Leif Erikson. They did not stay there long, however. In the early 16th century, Europeans started exploring Canada's eastern coast, beginning with John Cabot from England in 1497, and later Jacques Cartier in 1534 from France. Alexander Mackenzie later reached the Pacific coast over land, where captains James Cook and George Vancouver went by sea. The Europeans also traded beaver furs to the First Nations.
-
-Parts of Canada were settled by France, and parts by England and Scotland. In 1605, Port Royal was built in Acadia (today called Nova Scotia) by the French, led by Samuel de Champlain, and in 1608 he started settling Quebec. The British took control of the French areas after a battle on the Plains of Abraham near Quebec City in 1759.
-
-After the American Revolutionary War, many people in the new United States wanted to stay loyal to Britain. Thousands came north to Canada and settled in Nova Scotia, New Brunswick, Quebec, and Ontario. They were called United Empire Loyalists. During the War of 1812, the United States tried to conquer Canada but were defeated.
-
-On July 1, 1867, Canada was united under a federal government. It included the provinces of Ontario, Quebec, New Brunswick, and Nova Scotia. Sir John A. Macdonald was the first prime minister. Manitoba, the Yukon territory, and the Northwest Territories became part of Canada in 1870. British Columbia joined in 1871, and Prince Edward Island in 1873.
-
-There were two Red River Rebellions, in 1869-70 and 1885, both led by Louis Riel. He fought for more rights for the Métis people, a mix between French and First Nations. A railroad across the country, the Canadian Pacific Railway, finished in 1885, made it easier for Canadians to move to the west. Many Europeans came to the prairies, so Alberta and Saskatchewan became provinces in 1905.
-
-Canadian soldiers fought in World War I for the British Empire. More Canadians died in this war than any other war. Canada became better known as a country after its success in capturing Vimy Ridge from the Germans in France in 1917. Women were given the right to vote by the end of the war, partly because of the help they gave making weapons while the men fought in Europe. In 1931, Canada became fully independent. From 1931 on the Government of Canada made all decisions about Canada.
-
-Canadians also fought in World War II. The Dieppe Raid in 1942 went very badly and most of the soldiers were killed, wounded, or taken prisoner. Canadians were important in 1944 at Normandy, and they liberated the Netherlands (freed it from the Germans).
-
-In 1949, Newfoundland and Labrador became the 10th province of Canada. In 1956, Canadian Lester Pearson, who later became prime minister, helped end the Suez Crisis. As a result, he won the Nobel Peace Prize. In 1965, Pearson helped Canada get a new flag, the Maple Leaf. Before that, Canadians had used the Red Ensign. In 1982, Canada changed its constitution, including a new Charter of Rights and Freedoms. The main part of the Constitution is still the 1867 British North America Act.
-
-Some French Canadians today wish to form their own country, separate from the rest of Canada. The province of Quebec held a referendum (vote) in 1980, but only about 40% wanted to separate. Another referendum was held in 1995, with almost 50% voting in favour of leaving Canada.
-
-Today, about 25% of Canadians speak French as their first language. Many people can speak both French and English. Although most French Canadians live in the province of Quebec, there are French-speaking communities and people all across Canada. For example, 40% of the people in the province of New Brunswick and 20% of those in Manitoba have a strong French background, as do some people in Ontario, mainly along its border with Quebec.
-
-In 1999, Nunavut was created as Canada's third territory, out of the eastern Northwest Territories, in an agreement with the Inuit people.
-
-After-tax middle-class incomes in Canada now appear to be higher than in the United States.</p>
-</br>
-<embed src="anthem.mp3" autostart=true loop=false height=62 width=144 controls="console"></embed>
-</br>
-</br>
-<h1 style="color:white;">Stereotypes</h1>
-<ol>
-<li style="color:white;">We say, eh</li>
-<li style="color:white;">Canada is freezing all year round</li>
-<li style="color:white;">We say sorry to much</li>
-<li style="color:white;"><a href='HiddenPage.html' style='color:white; text-decoration:none;'>All we do is watch hockey</a></li>
-</ol>
-
-</br>
-</br>
-<h3 id='coolfont' style='color:red'> <center>Website by Ezra Kirsh</center></p>
-<center><img src='ezra.jpg'></center>
-</br>
-<center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.4967390022184!2d-79.38646100000001!3d43.70022500000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b333690c35257%3A0x4658d2ee2aa166ed!2sGreenwood+College+School!5e0!3m2!1sen!2sca!4v1417713572882" width="600" height="450" frameborder="0" style="border:0"></iframe></center>
-</br>
-<footer><center>Copyright Goverment of Canada 2014, Authorized by Head of Government Internet Services</center></footer>
-</body>
-<!-- If you are reading this you have managed to find the next clue. Your journey will now take you to a hidden page in my website, Click one the stereotypes in our list and you will be redirected-->
+	</body>
 </html>
