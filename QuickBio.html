@@ -1,0 +1,100 @@
+<html>
+<head>
+<script>
+var startDate = 1432955433871;
+
+var now = 0;
+now = Date.now();
+    
+var nowInDays = 0;
+var minutes = 0;
+var hours = 0;
+
+nowInDays = (now - startDate) / (1000*60*60*24);
+minutes = ((now - startDate) / (1000*60));
+hours = ((now - startDate) / (1000*60*60));
+    
+if (nowInDays > 1) {
+    document.title = "QuickBio - Since " + nowInDays.toFixed(0) + " days ago";
+}
+else if (hours < 1) {
+    document.title = "QuickBio - Since " + minutes.toFixed(0) + " minutes ago";
+}
+else {
+    document.title = "QuickBio - Since " + hours.toFixed(0) + " hours ago";
+}
+
+function login() {
+    FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    console.log('Logged in.');
+  }
+  else {
+    FB.login();
+  }
+});
+}
+
+</script>
+<link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<style>
+#header1 {
+  text-align: center;
+  font-family: 'Bree Serif', serif;
+  font-size: 75px;
+  color: rgb(39,39,38);
+}
+#step1 {
+  text-align: center;
+  font-family: 'Bree Serif', serif;
+  font-size: 50px;
+  color: rgb(39,39,38);
+}
+body {
+  background-color: rgb(237,239,235);
+}
+.line-separator{
+height:1px;
+background:rgb(255,205,82);
+border-bottom:1px solid rgb(249,80,82);
+}
+#login {
+    background-color: #F5F5F5;
+}
+.button {
+    background: rgb(249,80,82);
+    border-radius: 4px;
+    color: rgb(237,239,235);
+    width: 160px;
+    height: 80px;
+    font-family: 'Bree Serif', serif;
+    font-size:30px;
+}
+</style>
+<title>Making your biography's simple since a long time ago</title>  
+</head>
+<body>
+<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '812506892178397',
+          xfbml      : true,
+          version    : 'v2.3'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "http://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+</script>
+<h1 id="header1">QuickBio</h1>
+<div class="line-separator"></div>
+<h2 id="step1">Step 1:</h2>
+<center><button class="button pure-button" onclick="login()">Login</button></center>
+</body>
+</html>

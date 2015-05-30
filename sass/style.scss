@@ -81,6 +81,7 @@
 		@include vendor-property('transform', 'translate3d(0,0,0)');
 
 		/* Set your background with this */
+        $bg = "/images/nighttree.jpg"
 		background: $bg;
 
 		background-repeat: repeat-x;
