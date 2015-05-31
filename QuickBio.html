@@ -54,7 +54,8 @@ function startup() {
     var select = selectBox[0];
     select.style.display = 'none';
     document.getElementById('openingtext').style.display = 'none';
-    
+    document.getElementById('endingtext').style.display = 'none';
+
     if (checkLoginStatus()) {
         step2();
     }
@@ -67,6 +68,7 @@ function step2() {
     var selectBox = document.getElementsByTagName('select');
     var select = selectBox[0];
     select.style.display = 'inline-block';
+    document.getElementById('openingtext').style.display = 'inline-block';
     document.getElementById('openingtext').style.display = 'inline-block';
     console.log(select);
     FB.api("/me", function (response) {
@@ -177,7 +179,7 @@ select {
 <p id='openingtext'>Use </p>
 <select>
 </select>
-<p id="endingtext">ending text</p>
+<p id="endingtext">in my bio</p>
 </center>
 </body>
 </html>
