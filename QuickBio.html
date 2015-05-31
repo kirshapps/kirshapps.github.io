@@ -66,7 +66,7 @@ function step2() {
         if (response && !response.error) {
             var responseKeys = Object.keys(response);
             console.log("Response Keys: " + responseKeys);
-            for (var x = 0; x < responseKeys).length; x++) {
+            for (var x = 0; x < responseKeys.length; x++) {
                 select.options[x] = new Option(responseKeys[x], responseKeys[x], false, false);
             }
         }
