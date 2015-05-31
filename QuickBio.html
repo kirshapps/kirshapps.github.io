@@ -61,11 +61,13 @@ function step2() {
     document.getElementById('step1').innerHTML = 'Step 2:';
     var selectBox = document.getElementsByTagName('select');
     var select = selectBox[0];
+    console.log(select);
     FB.api("/me", function (response) {
         if (response && !response.error) {
-            console.log("Response Keys: " + Object.keys(response));
-            for (var x = 0; x < Object.keys(response).length; x++) {
-                select.appendChild = '<option>' + Object.keys(response)[x] + '</option>';
+            var responseKeys = Object.keys(response);
+            console.log("Response Keys: " + responseKeys);
+            for (var x = 0; x < responseKeys).length; x++) {
+                select.options[x] = new Option(responseKeys[x], responseKeys[x], false, false);
             }
         }
     });
