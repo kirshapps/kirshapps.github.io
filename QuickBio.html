@@ -69,7 +69,7 @@ function step2() {
     var select = selectBox[0];
     select.style.display = 'inline-block';
     document.getElementById('openingtext').style.display = 'inline-block';
-    document.getElementById('openingtext').style.display = 'inline-block';
+    document.getElementById('endingtext').style.display = 'inline-block';
     console.log(select);
     FB.api("/me", function (response) {
         if (response && !response.error) {
