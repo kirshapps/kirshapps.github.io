@@ -54,7 +54,7 @@ function startup() {
     var select = selectBox[0];
     select.style.display = 'none';
     document.getElementById('openingtext').style.display = 'none';
-
+    
     if (checkLoginStatus()) {
         step2();
     }
@@ -83,6 +83,7 @@ function step2() {
 </script>
 <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<link rel="stylesheet" href="font-awesome.css">
 <style>
 #header1 {
   text-align: center;
@@ -134,7 +135,7 @@ select {
 }
 #openingtext {
   font-family: 'Bree Serif', serif;
-  font-size: 25px;
+  font-size: 20px;
   color: rgb(39,39,38); 
 }
 
@@ -170,6 +171,7 @@ select {
 <p id='openingtext'>Use the following in my biography: </p>
 <select>
 </select>
+<i class="fa fa-plus"></i>
 </center>
 </body>
 </html>
