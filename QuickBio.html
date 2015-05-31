@@ -37,11 +37,33 @@ FB.getLoginStatus(function(response) {
   }
 });
 }
+
+function checkLoginStatus() {
+    FB.getLoginStatus(function(response) {
+        if (response === 'connected') {
+            return true;
+        }
+        else {
+            return false;
+        }
+    });
+}
+    
+function startup() {
+    if (checkLoginStatus()) {
+        step2();
+    }
+}
     
 function step2() {
     console.log("Logged In");
     document.getElementById('login-button').style.display = 'none';
     document.getElementById('step1').innerHTML = 'Step 2:';
+    FB.api("/me", function (response) {
+        if (response && !response.error) {
+            console.log(response);
+        }
+    });
 }
 
 </script>
@@ -77,10 +99,34 @@ border-bottom:1px solid rgb(249,80,82);
     font-family: 'Bree Serif', serif;
     font-size:30px;
 }
+select {
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select {padding-right:18px}
+}
 </style>
 <title>Making your biography's simple since a long time ago</title>  
 </head>
-<body>
+<body onload="startup()">
 <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -102,7 +148,7 @@ border-bottom:1px solid rgb(249,80,82);
 <div class="line-separator"></div>
 <h2 id="step1">Step 1:</h2>
 <center><button id="login-button" class="button pure-button" onclick="login()">Login</button>
-<select class="custom-select select">
+<select>
 <option>1</option>
 <option>2</option>
 </select>
