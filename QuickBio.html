@@ -63,7 +63,7 @@ function step2() {
     var select = selectBox[0];
     FB.api("/me", function (response) {
         if (response && !response.error) {
-            console.log(Object.keys(response));
+            console.log("Response Keys: " + Object.keys(response));
             for (var x = 0; x < Object.keys(response).length; x++) {
                 select.appendChild = '<option>' + Object.keys(response)[x] + '</option>';
             }
