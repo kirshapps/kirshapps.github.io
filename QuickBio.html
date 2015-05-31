@@ -39,6 +39,8 @@ FB.getLoginStatus(function(response) {
     
 function step2() {
     console.log("Logged In");
+    document.getElementById('login-button').style.display = 'none';
+    document.getElementById('step1').innerHTML = 'Step 2:';
 }
 
 </script>
@@ -98,6 +100,6 @@ border-bottom:1px solid rgb(249,80,82);
 <h1 id="header1">QuickBio</h1>
 <div class="line-separator"></div>
 <h2 id="step1">Step 1:</h2>
-<center><button id="login" class="button pure-button" onclick="login()">Login</button></center>
+<center><button id="login-button" class="button pure-button" onclick="login()">Login</button></center>
 </body>
 </html>
