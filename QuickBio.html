@@ -53,7 +53,8 @@ function startup() {
     var selectBox = document.getElementsByTagName('select');
     var select = selectBox[0];
     select.style.display = 'none';
-    
+    document.getElementById('openingtext').style.display = 'none';
+
     if (checkLoginStatus()) {
         step2();
     }
@@ -66,6 +67,7 @@ function step2() {
     var selectBox = document.getElementsByTagName('select');
     var select = selectBox[0];
     select.style.display = 'inherit';
+    document.getElementById('openingtext').style.display = 'inherit';
     console.log(select);
     FB.api("/me", function (response) {
         if (response && !response.error) {
@@ -130,6 +132,11 @@ select {
     appearance:none;
     cursor:pointer;
 }
+#openingtext {
+  font-family: 'Bree Serif', serif;
+  font-size: 25px;
+  color: rgb(39,39,38); 
+}
 
 /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -160,10 +167,9 @@ select {
 <div class="line-separator"></div>
 <h2 id="step1">Step 1:</h2>
 <center><button id="login-button" class="button pure-button" onclick="login()">Login</button>
-<p id='openingtext'>Include
+<p id='openingtext'>
 <select>
 </select>
-in my bio</p>
 </center>
 </body>
 </html>
