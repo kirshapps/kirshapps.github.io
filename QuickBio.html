@@ -59,9 +59,13 @@ function step2() {
     console.log("Logged In");
     document.getElementById('login-button').style.display = 'none';
     document.getElementById('step1').innerHTML = 'Step 2:';
+    var selectBox = document.getElementsByTagName('select');
+    var select = selectBox[0];
     FB.api("/me", function (response) {
         if (response && !response.error) {
-            console.log(response);
+            for (var x = 0; x < Object.keys(response).length; x++) {
+                select.appendChild = '<option>' + Object.keys(response)[x] + '</option>';
+            }
         }
     });
 }
@@ -149,8 +153,7 @@ select {
 <h2 id="step1">Step 1:</h2>
 <center><button id="login-button" class="button pure-button" onclick="login()">Login</button>
 <select>
-<option>1</option>
-<option>2</option>
+
 </select>
 </center>
 </body>
