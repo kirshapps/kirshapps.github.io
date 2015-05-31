@@ -66,8 +66,8 @@ function step2() {
     document.getElementById('step1').innerHTML = 'Step 2:';
     var selectBox = document.getElementsByTagName('select');
     var select = selectBox[0];
-    select.style.display = 'inherit';
-    document.getElementById('openingtext').style.display = 'inherit';
+    select.style.display = 'inline-block';
+    document.getElementById('openingtext').style.display = 'inline-block';
     console.log(select);
     FB.api("/me", function (response) {
         if (response && !response.error) {
