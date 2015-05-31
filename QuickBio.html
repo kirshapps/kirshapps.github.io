@@ -139,6 +139,11 @@ select {
   font-size: 20px;
   color: rgb(39,39,38); 
 }
+#endingtext {
+  font-family: 'Bree Serif', serif;
+  font-size: 20px;
+  color: rgb(39,39,38); 
+}
 
 /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -169,11 +174,10 @@ select {
 <div class="line-separator"></div>
 <h2 id="step1">Step 1:</h2>
 <center><button id="login-button" class="button pure-button" onclick="login()">Login</button>
-<p id='openingtext'>Use
+<p id='openingtext'>Use </p>
 <select>
 </select>
-in my bio
-</p>
+<p id="endingtext">ending text</p>
 </center>
 </body>
 </html>
