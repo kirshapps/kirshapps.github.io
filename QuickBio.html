@@ -100,7 +100,7 @@ function populateSelect(select, data) {
 function addSelect() {
     var optionDiv = document.getElementById('fb-data-options');
     var oldSection = document.getElementById('data-option-1');
-    
+    selectionCount = selectionCount + 1;
     var newSection = oldSection.cloneNode(true);
     newSection.id = 'data-option-' + selectionCount;
     var selects = newSection.getElementsByTagName('select');
