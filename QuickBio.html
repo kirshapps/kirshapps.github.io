@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 <script>
 var startDate = 1432955433871;
+    
+var selectionCount = 0;
 
 var now = 0;
 now = Date.now();
@@ -72,8 +74,7 @@ function step2() {
     console.log("Logged In");
     document.getElementById('login-button').style.display = 'none';
     document.getElementById('step1').innerHTML = 'Step 2:';
-    var selectBox = document.getElementsByTagName('select');
-    var select = selectBox[0];
+    var select = document.getElementById('select-box-1');
     select.style.display = 'inline-block';
     document.getElementById('openingtext').style.display = 'inline-block';
     document.getElementById('endingtext').style.display = 'inline-block';
@@ -94,6 +95,18 @@ function populateSelect(select, data) {
             select.options[x] = new Option(dataKeys[x], dataKeys[x], false, false);
         }
      }
+}
+    
+function addSelectionOption() {
+    var optionDiv = document.getElementById('fb-data-options');
+    var newSection = document.createElement('section');
+    
+    selectionCount = selectionCount + 1;
+    newSection.id = "data-option-" + selectionCount + 1;
+    
+    newSection.appendChild('<p id='openingtext'>Use </p>');
+    newSection.appendChild('<select id="select-box' + selectionCount + 1 + '"></select>');
+    optionDiv.appendChild(newSection);
 }
 
 </script>
@@ -202,7 +215,7 @@ select {
 <div id="fb-data-options">
 <section id="data-option-1">
 <p id='openingtext'>Use </p>
-<select>
+<select id="select-box-1">
 </select>
 <p id="endingtext"> in my bio,</p>
 <button onclick="addSelectionOption()" id="add-data-button" class=""><i class="fa fa-plus"></i></button>
