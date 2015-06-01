@@ -80,7 +80,7 @@ function step2() {
     document.getElementById('endingtext').style.display = 'inline-block';
     document.getElementById('add-data-button').style.display = 'inline-block';
     console.log(select);
-    FB.api("/me", function (response) {
+    FB.api("me?fields=sports,relationship_status,gender,inspirational_people,interested_in,favorite_athletes,favorite_teams,quotes", function (response) {
        populateSelect(select, response);
     });
 }
