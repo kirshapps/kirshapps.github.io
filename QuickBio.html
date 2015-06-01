@@ -41,7 +41,7 @@ FB.getLoginStatus(function(response) {
     else {
         toastr.error("Your login failed, please try again.", "Login Failed");
     }
-    }, {scope:'public_profile,email,user_about_me,user_relationships,user_relationship_details,user_likes,user_birthday,user_work_history,user_hometown'});
+    }, {scope:'public_profile,email,user_about_me,user_relationships,user_relationship_details,user_likes,user_birthday,user_work_history'});
   }
 });
 }
@@ -82,7 +82,7 @@ function step2() {
     document.getElementById('add-data-button').style.display = 'inline-block';
     document.getElementById('done-button').style.display = 'block';
     console.log(select);
-    FB.api("/me?fields=sports,relationship_status,gender,inspirational_people,interested_in,favorite_athletes,favorite_teams,quotes,home", function (response) {
+    FB.api("/me?fields=sports,relationship_status,gender,inspirational_people,interested_in,favorite_athletes,favorite_teams,quotes", function (response) {
        console.log(response);
        populateSelect(select, response);
     });
