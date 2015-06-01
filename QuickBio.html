@@ -102,8 +102,11 @@ function addSelect() {
     var oldSection = document.getElementById('data-option-1');
     
     var newSection = oldSection.cloneNode(true);
+    newSection.id = 'data-option-' + selectionCount;
+    var selects = newSection.getElementsByTagName('select');
+    var select = selects[0];
+    select.id = 'select-box-' + selectionCount;
     optionDiv.appendChild(newSection);
-    
 }
 
 </script>
