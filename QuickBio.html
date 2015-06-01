@@ -74,7 +74,6 @@ function startup() {
 function step2() {
     console.log("Logged In");
     document.getElementById('login-button').style.display = 'none';
-    document.getElementById('step1').innerHTML = 'Step 2:';
     var select = document.getElementById('select-box-1');
     select.style.display = 'inline-block';
     document.getElementById('openingtext').style.display = 'inline-block';
@@ -83,7 +82,7 @@ function step2() {
     document.getElementById('done-button').style.display = 'block';
     console.log(select);
     FB.api("/me?fields=sports,relationship_status,gender,inspirational_people,interested_in,favorite_athletes,favorite_teams,quotes", function (response) {
-       console.log(response);
+       document.getElementById('step1').innerHTML = 'Welcome, ' + response.first_name;
        populateSelect(select, response);
     });
 }
@@ -94,7 +93,6 @@ function step2() {
 function populateSelect(select, data) {
      if (data && !data.error) {
         var dataKeys = Object.keys(data);
-        console.log(dataKeys);
         for (var x = 0; x < dataKeys.length; x++) {
             select.options[x] = new Option(dataKeys[x], dataKeys[x], false, false);
         }
