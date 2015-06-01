@@ -64,6 +64,7 @@ function startup() {
     document.getElementById('openingtext').style.display = 'none';
     document.getElementById('endingtext').style.display = 'none';
     document.getElementById('add-data-button').style.display = 'none';
+    document.getElementById('done-button').style.display = 'none';
 
     if (checkLoginStatus()) {
         step2();
@@ -79,6 +80,7 @@ function step2() {
     document.getElementById('openingtext').style.display = 'inline-block';
     document.getElementById('endingtext').style.display = 'inline-block';
     document.getElementById('add-data-button').style.display = 'inline-block';
+    document.getElementById('done-button').style.display = 'block';
     console.log(select);
     FB.api("me?fields=sports,relationship_status,gender,inspirational_people,interested_in,favorite_athletes,favorite_teams,quotes,home,education", function (response) {
        populateSelect(select, response);
@@ -106,7 +108,8 @@ function addSelect() {
     var selects = newSection.getElementsByTagName('select');
     var select = selects[0];
     select.id = 'select-box-' + selectionCount;
-    optionDiv.appendChild(newSection);
+    var doneButton = document.getElementById('done-button');
+    optionDiv.insertBefore(newSection, doneButton);
 }
 
 </script>
@@ -220,7 +223,7 @@ select {
 <p id="endingtext"> in my bio,</p>
 <button onclick="addSelect()" id="add-data-button" class=""><i class="fa fa-plus"></i></button>
 </section>
-<button id="login-button" class="button pure-button">
+<button id="done-button" class="button pure-button">
 </div>
 </center>
 </body>
