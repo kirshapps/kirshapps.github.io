@@ -61,6 +61,7 @@ function startup() {
     select.style.display = 'none';
     document.getElementById('openingtext').style.display = 'none';
     document.getElementById('endingtext').style.display = 'none';
+    document.getElementById('add-data-button').style.display = 'none';
 
     if (checkLoginStatus()) {
         step2();
@@ -76,16 +77,23 @@ function step2() {
     select.style.display = 'inline-block';
     document.getElementById('openingtext').style.display = 'inline-block';
     document.getElementById('endingtext').style.display = 'inline-block';
+    document.getElementById('add-data-button').style.display = 'inline-block';
     console.log(select);
     FB.api("/me", function (response) {
-        if (response && !response.error) {
-            var responseKeys = Object.keys(response);
-            console.log("Response Keys: " + responseKeys);
-            for (var x = 0; x < responseKeys.length; x++) {
-                select.options[x] = new Option(responseKeys[x], responseKeys[x], false, false);
-            }
-        }
+       populateSelect(select, response);
     });
+}
+
+
+
+           
+function populateSelect(select, data) {
+     if (data && !data.error) {
+        var dataKeys = Object.keys(data);
+        for (var x = 0; x < dataKeys.length; x++) {
+            select.options[x] = new Option(dataKeys[x], dataKeys[x], false, false);
+        }
+     }
 }
 
 </script>
@@ -182,10 +190,13 @@ select {
 <div class="line-separator"></div>
 <h2 id="step1">Step 1:</h2>
 <center><button id="login-button" class="button pure-button" onclick="login()">Login</button>
+<div id="fb-data-options">
 <p id='openingtext'>Use </p>
 <select>
 </select>
-<p id="endingtext">in my bio</p>
+<p id="endingtext"> in my bio, </p>
+<button id="add-data-button" class="pure-button"><b>+</b></button>
+</div>
 </center>
 </body>
 </html>
