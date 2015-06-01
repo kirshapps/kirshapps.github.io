@@ -93,6 +93,7 @@ function step2() {
 function populateSelect(select, data) {
      if (data && !data.error) {
         var dataKeys = Object.keys(data);
+        console.log(dataKeys);
         for (var x = 0; x < dataKeys.length; x++) {
             select.options[x] = new Option(dataKeys[x], dataKeys[x], false, false);
         }
