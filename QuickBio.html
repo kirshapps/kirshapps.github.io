@@ -92,7 +92,7 @@ function populateSelect(select, data) {
      if (data && !data.error) {
         var dataKeys = Object.keys(data);
         for (var x = 0; x < dataKeys.length; x++) {
-            select.options.push(new Option(dataKeys[x], dataKeys[x], false, false));
+            select.options[x] = new Option(dataKeys[x], dataKeys[x], false, false);
         }
      }
 }
