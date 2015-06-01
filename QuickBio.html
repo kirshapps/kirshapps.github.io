@@ -83,6 +83,7 @@ function step2() {
     document.getElementById('done-button').style.display = 'block';
     console.log(select);
     FB.api("/me?fields=sports,relationship_status,gender,inspirational_people,interested_in,favorite_athletes,favorite_teams,quotes,home,education", function (response) {
+       console.log(response);
        populateSelect(select, response);
     });
 }
