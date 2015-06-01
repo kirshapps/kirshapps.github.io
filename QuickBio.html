@@ -1,6 +1,7 @@
 <html>
 <head>
-<style src="https://github.com/filamentgroup/select-css/blob/master/src/select.css"></style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 <script>
 var startDate = 1432955433871;
 
@@ -32,7 +33,12 @@ FB.getLoginStatus(function(response) {
   }
   else {
      FB.login(function(response) {
-     step2();
+     if (checkLoginStatus()) {
+         step2();
+     }
+    else {
+        toastr.error("Your login failed, please try again.", "Login Failed");
+    }
     }, {scope: 'public_profile,email'});
   }
 });
