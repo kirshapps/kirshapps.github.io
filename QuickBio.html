@@ -80,7 +80,7 @@ function step2() {
     document.getElementById('endingtext').style.display = 'inline-block';
     document.getElementById('add-data-button').style.display = 'inline-block';
     console.log(select);
-    FB.api("me?fields=sports,relationship_status,gender,inspirational_people,interested_in,favorite_athletes,favorite_teams,quotes", function (response) {
+    FB.api("me?fields=sports,relationship_status,gender,inspirational_people,interested_in,favorite_athletes,favorite_teams,quotes,home,education", function (response) {
        populateSelect(select, response);
     });
 }
@@ -220,6 +220,7 @@ select {
 <p id="endingtext"> in my bio,</p>
 <button onclick="addSelect()" id="add-data-button" class=""><i class="fa fa-plus"></i></button>
 </section>
+<button id="login-button" class="button pure-button">
 </div>
 </center>
 </body>
