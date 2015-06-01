@@ -5,7 +5,7 @@
 <script>
 var startDate = 1432955433871;
     
-var selectionCount = 0;
+var selectionCount = 1;
 
 var now = 0;
 now = Date.now();
@@ -99,14 +99,11 @@ function populateSelect(select, data) {
     
 function addSelect() {
     var optionDiv = document.getElementById('fb-data-options');
-    var newSection = document.createElement('section');
+    var oldSection = document.getElementById('data-option-1');
     
-    selectionCount = selectionCount + 1;
-    newSection.id = "data-option-" + selectionCount + 1;
+    var newSection = oldSection.cloneNode(true);
+    optionDiv.appendChild('newSection');
     
-    newSection.appendChild('<p id="openingtext">Use </p>');
-    newSection.appendChild('<select id="select-box' + selectionCount + 1 + '"></select>');
-    optionDiv.appendChild(newSection);
 }
 
 </script>
