@@ -3,8 +3,22 @@
 <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
+<script src="format.js"></script>
 
 <script>
+    
+var fbData = [];
+    
+var bioFormats = {
+    "{quote}, this is a quote that {first_name} {last_name} is inspired by. A {gender} who is       inspired by {inspire_1}, {inpire_2} and {inspire_3}, {first_name} is a person you want to       get to know. {first_name} likes sports such as {sport1} and {sport2}.",
+    
+    "{quote}, this is a quote that {first_name} {last_name} is inspired by. A {gender} who is       inspired by {inspire_1} and {inspire_2}, {first_name} is a person you want to get to know.       {first_name} likes sports such as {sport1} and {sport2}.",
+    
+    "{quote}, this is a quote that {first_name} {last_name} is inspired by. A {gender} who is       inspired by {inspire_1}, {inpire_2} and {inspire_3}, {first_name} is a person you want to       get to know. {first_name} likes {sport1}.",
+    
+    "{quote}, this is a quote that {first_name} {last_name} is inspired by. A {gender} who is       inspired by {inspire_1} and {inspire_2}, {first_name} is a person you want to get to know.      {first_name} likes sports such as {sport1}."
+}
+    
 var startDate = 1432955433871;
     
 var selectionCount = 1;
@@ -84,6 +98,7 @@ function step2() {
     document.getElementById('done-button').style.display = 'block';
     console.log(select);
     FB.api("/me?fields=sports,relationship_status,gender,inspirational_people,interested_in,favorite_athletes,favorite_teams,quotes,first_name,last_name", function (response) {
+       fbData = response;
        document.getElementById('step1').innerHTML = 'Welcome, ' + response.first_name;
        populateSelect(select, response);
     });
@@ -126,7 +141,20 @@ function collectOptions() {
         selectedItems[x] = selected;
     }
     
-    console.log(selectedItems);
+    var existCount;
+    
+    for (var x = 0; x < selectedItems.length; x++) {
+        if (fbData[selectedItems[x]] != null) {
+            existCount++;
+        }
+    }
+    
+    if (existCount == selectedItems.length) {
+        format(bioFormats[0], {'quote':fbData.quote, 'first_name':fbData.first_name, 'last_name':fbData.last_name});
+    }
+    else {
+        format(bioFormats[1], {'quote':fbData.quote, 'first_name':fbData.first_name, 'last_name':fbData.last_name});
+    }
 }
 
 </script>
