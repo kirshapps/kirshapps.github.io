@@ -9,7 +9,7 @@
     
 var fbData = [];
     
-var bioFormats = {
+var bioFormats = [
     "{quote}, this is a quote that {first_name} {last_name} is inspired by. A {gender} who is       inspired by {inspire_1}, {inpire_2} and {inspire_3}, {first_name} is a person you want to       get to know. {first_name} likes sports such as {sport1} and {sport2}.",
     
     "{quote}, this is a quote that {first_name} {last_name} is inspired by. A {gender} who is       inspired by {inspire_1} and {inspire_2}, {first_name} is a person you want to get to know.       {first_name} likes sports such as {sport1} and {sport2}.",
@@ -17,7 +17,7 @@ var bioFormats = {
     "{quote}, this is a quote that {first_name} {last_name} is inspired by. A {gender} who is       inspired by {inspire_1}, {inpire_2} and {inspire_3}, {first_name} is a person you want to       get to know. {first_name} likes {sport1}.",
     
     "{quote}, this is a quote that {first_name} {last_name} is inspired by. A {gender} who is       inspired by {inspire_1} and {inspire_2}, {first_name} is a person you want to get to know.      {first_name} likes sports such as {sport1}."
-};
+];
     
 var startDate = 1432955433871;
     
@@ -150,11 +150,13 @@ function collectOptions() {
     }
     
     if (existCount == selectedItems.length) {
-        format(bioFormats[0], {'quote':fbData.quote, 'first_name':fbData.first_name, 'last_name':fbData.last_name});
+        var text = format(bioFormats[0], {'quote':fbData.quote, 'first_name':fbData.first_name, 'last_name':fbData.last_name});
     }
     else {
-        format(bioFormats[1], {'quote':fbData.quote, 'first_name':fbData.first_name, 'last_name':fbData.last_name});
+        var text = format(bioFormats[1], {'quote':fbData.quote, 'first_name':fbData.first_name, 'last_name':fbData.last_name});
     }
+    
+    console.log(text);
 }
 
 </script>
