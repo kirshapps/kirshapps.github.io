@@ -114,6 +114,21 @@ function addSelect() {
     optionDiv.insertBefore(newSection, doneButton);
 }
 
+function collectOptions() {
+    var optionDiv = document.getElementById('fb-data-options');
+    var selects = optionDiv.getElementsByTagName('select');
+    
+    var selectedItems = [];
+    
+    for (var x = 0; x < selects.length; x++) {
+        var select = selects[x];
+        var selected = select.options[select.selectedIndex].value;
+        selectedItems[x] = selected;
+    }
+    
+    console.log(selectedItems);
+}
+
 </script>
 <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
@@ -236,7 +251,7 @@ select {
 <p id="endingtext"> in my bio,</p>
 <button onclick="addSelect()" id="add-data-button" class=""><i class="fa fa-plus"></i></button>
 </section>
-<button id="done-button" class="button pure-button">Done</button>
+<button id="done-button" class="button pure-button" onclick="collectOptions()">Done</button>
 </div>
 </center>
 </body>
