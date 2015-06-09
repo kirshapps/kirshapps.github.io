@@ -4,20 +4,67 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
 <script src="format.js"></script>
+<script src="underscore.js"></script>
 
 <script>
     
 var fbData = [];
     
 var bioFormats = [
-    "{quote}, this is a quote that {first_name} {last_name} is inspired by. A {gender} who is       inspired by {inspire_1}, {inpire_2} and {inspire_3}, {first_name} is a person you want to       get to know. {first_name} likes sports such as {sport1} and {sport2}.",
-    
-    "{quote}, this is a quote that {first_name} {last_name} is inspired by. A {gender} who is       inspired by {inspire_1} and {inspire_2}, {first_name} is a person you want to get to know.       {first_name} likes sports such as {sport1} and {sport2}.",
-    
-    "{quote}, this is a quote that {first_name} {last_name} is inspired by. A {gender} who is       inspired by {inspire_1}, {inpire_2} and {inspire_3}, {first_name} is a person you want to       get to know. {first_name} likes {sport1}.",
-    
-    "{quote}, this is a quote that {first_name} {last_name} is inspired by. A {gender} who is       inspired by {inspire_1} and {inspire_2}, {first_name} is a person you want to get to know.      {first_name} likes sports such as {sport1}."
+    {
+    tag:["first_name"],
+    text:"Hello, my name is {first_name}"     
+    },
+    {
+    tag:["first_name","last_name"],
+    text:"Hello, my name is {first_name} {last_name}"    
+    },
+    {
+    tag:["first_name","last_name", "email"],
+    text:"Hello, my name is {first_name} {last_name}. You can email me at {email}"
+    },
+    {
+    tag:["first_name","last_name", "quotes"],
+    text:"{quote}. This is a quote that inspires {first_name} {last_name}."
+    },
+    {
+    tag:["first_name","last_name", "email","quotes"],
+    text:"{quote}. This is a quote that inspires {first_name} {last_name}. You can email him at {email}"
+    },
+    {
+    tag:["first_name","last_name", "email", "sports"],
+    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. I enjoy sports like {sport1} and {sport2}."
+    },
+    {
+    tag:["first_name","last_name", "quotes", "sports"],
+    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. I enjoy sports like {sport1} and {sport2}.My favourite quote is {quote}"
+    },
+    {
+    tag:["first_name","last_name", "quotes", "sports", "favorite_athletes"],
+    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. I enjoy sports like {sport1} and {sport2}. My favorite athletes are {ath1} and {ath2}. My favourite quote is {quote}."
+    },
+    {
+    tag:["first_name","last_name", "quotes", "favorite_athletes"],
+    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. My favorite athletes are {ath1} and {ath2}. My favourite quote is {quote}."
+    },
+    {},
+    {}
 ];
+
+function findTextForTags(tags) {
+    
+    for (var x = 0; x < bioFormats.length; x++) {
+        bioFormats[x].tag.sort();
+    }
+    
+    for (var y = 0; y < bioFormats.length; y++) {
+        if (_.isEqual(bioFormats[y].tag, tags)) {
+            console.log(bioFormats[y].tag);
+        }
+    }
+    
+    console.log(possibleFormats);
+}
     
 var startDate = 1432955433871;
     
@@ -149,14 +196,8 @@ function collectOptions() {
         }
     }
     
-    if (existCount == selectedItems.length) {
-        var text = format(bioFormats[0], {'quote':fbData.quote, 'first_name':fbData.first_name, 'last_name':fbData.last_name});
-    }
-    else {
-        var text = format(bioFormats[1], {'quote':fbData.quote, 'first_name':fbData.first_name, 'last_name':fbData.last_name});
-    }
     
-    console.log(text);
+    findTextForTags(selectedItems);
 }
 
 </script>
