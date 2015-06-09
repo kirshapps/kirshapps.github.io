@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
 <script src="format.js"></script>
-<script src="underscore.js"></script>
 
 <script>
     
@@ -130,6 +129,9 @@ function startup() {
 
     if (checkLoginStatus()) {
         step2();
+    }
+    else {
+        login();
     }
 }
     
