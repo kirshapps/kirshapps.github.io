@@ -53,12 +53,9 @@ var bioFormats = [
 
 function findTextForTags(tags) {
     
-    for (var x = 0; x < bioFormats.length; x++) {
-        bioFormats[x].tag.sort();
-    }
-    
     for (var y = 0; y < bioFormats.length; y++) {
-        if (_.isEqual(bioFormats[y].tag, tags)) {
+        bioFormats[y].tag.sort();
+        if (bioFormats[y].tag === tags) {
             console.log(bioFormats[y].tag);
         }
     }
