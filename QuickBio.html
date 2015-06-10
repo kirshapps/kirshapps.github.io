@@ -90,36 +90,6 @@ function findTextForTags(tags) {
    }
 }
     
-function formatText(formatInfo) {
-    
-    if ($.inArray("sports", formatInfo.tag)) {
-        if (fbData.sports.length == 1) {
-            fbData.sportString = format(sportStrings[0], fbData.sports[0].name);   
-        }
-        if (fbData.sports.length == 2) {
-            fbData.sportString = format(sportStrings[1], {sport1:fbData.sports[0].name, sport2:fbData.sports[1].name}); 
-        }
-        if (fbData.sports.length == 3) {
-            fbData.sportString = format(sportStrings[2], {sport1:fbData.sports[0].name, sport2:fbData.sports[1].name, sport3:fbData.sports[2].name}); 
-        }
-        
-        
-    }
-    
-     if ($.inArray("favorite_athletes", formatInfo.tag)) {
-        if (fbData.favorite_athletes.length == 1) {
-            fbData.athleteString = format(athleteStrings[0], fbData.favorite_athletes[0].name);   
-        }
-        if (fbData.favorite_athletes.length == 2) {
-            fbData.athleteString = format(athleteStringsStrings[1], [fbData.favorite_athletes[0].name, fbData.favorite_athletes[1].name]); 
-        }
-     }
-       
-        
-    
-    var finalString = format(formatInfo.text, fbData);
-    console.log(finalString);
-}
 
 
     
