@@ -27,6 +27,11 @@
 var fbData = [];
 var selectedFormat = [];
     
+var sportStrings = ["I enjoy sports like {sport1}", "I enjoy sports like {sport1} and {sport2}", "I enjoy sports like {sport1}, {sport2} and {sport3}"];
+    
+var athleteStrings = ["My favorite athlete is {ath1}", "My favorite athletes are {ath1} and {ath2}"];
+    
+
 var bioFormats = [
     {
     tag:["first_name"],
@@ -50,19 +55,19 @@ var bioFormats = [
     },
     {
     tag:["first_name","last_name", "email", "sports"],
-    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. I enjoy sports like {sport1}."
+    text:"Hello, my name is {first_name} {last_name}. You can email me at {email}. {sportString}."
     },
     {
     tag:["first_name","last_name", "quotes", "sports"],
-    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. I enjoy sports like {sport1}. My favourite quote is {quotes}"
+    text:"Hello, my name is {first_name} {last_name}. You can email me at {email}. {sportString}. My favourite quote is {quotes}"
     },
     {
     tag:["first_name","last_name", "quotes", "sports", "favorite_athletes"],
-    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. I enjoy {sport1}. My favorite athlete is {ath1}. My favourite quote is {quotes}."
+    text:"Hello, my name is {first_name} {last_name}. You can email me at {email}. I enjoy {sport1}. {athleteString}. My favourite quote is {quotes}."
     },
     {
     tag:["first_name","last_name", "quotes", "favorite_athletes"],
-    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. My favorite athlete is {ath1}. My favourite quote is {quotes}."
+    text:"Hello, my name is {first_name} {last_name}. You can email me at {email}. {athleteString}. My favourite quote is {quotes}."
     },
     {},
     {}
@@ -86,21 +91,32 @@ function findTextForTags(tags) {
 }
     
 function formatText(formatInfo) {
-    try {
-    fbData["sport1"] = fbData.sports[0].name;
-    }catch(e) {
-        toastr.error("Please add more data to your Facebook for this to work");
+    
+    if ($.inArray("sports", formatInfo.tag)) {
+        if (fbData.sports.length == 1) {
+            fbData.sportString = format(sportStrings[0], [fbData.sports[0].name]);   
+        }
+        if (fbData.sports.length == 2) {
+            fbData.sportString = format(sportStrings[1], [fbData.sports[0].name, fbData.sports[1].name]); 
+        }
+        if (fbData.sports.length == 3) {
+            fbData.sportString = format(sportStrings[2], [fbData.sports[0].name, fbData.sports[1].name, fbData.sports[2].name]); 
+        }
+        
+        
     }
     
+     if ($.inArray("favorite_athletes", formatInfo.tag)) {
+        if (fbData.favorite_athletes.length == 1) {
+            fbData.athleteStrings = format(athleteStrings[0], [fbData.favorite_athletes[0].name]);   
+        }
+        if (fbData.favorite_athletes.length == 2) {
+            fbData.athleteStrings = format(athleteStringsStrings[1], [fbData.favorite_athletes[0].name, fbData.favorite_athletes[1].name]); 
+        }
+     }
+       
+        
     
-    try {
-    fbData["ath1"] = fbData.favorite_athletes[0].name;
-    }catch(e) {
-        toastr.error("Please add more data to your Facebook for this to work");
-    }
-    
-    
-
     var finalString = format(formatInfo.text, fbData);
     console.log(finalString);
 }
