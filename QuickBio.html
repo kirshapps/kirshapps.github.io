@@ -66,8 +66,9 @@ var bioFormats = [
     {},
     {}
 ];
+    
 
-/* function findTextForTags(tags) {
+function findTextForTags(tags) {
     
     for (var y = 0; y < bioFormats.length; y++) {
         bioFormats[y].tag.sort();
@@ -79,7 +80,7 @@ var bioFormats = [
     console.log(possibleFormats);
 }
 
-*/
+
     
 var startDate = 1432955433871;
     
@@ -166,7 +167,12 @@ function step2() {
        fbData = response;
        document.getElementById('step1').innerHTML = 'Welcome, ' + response.first_name;
        populateSelect(select, response);
-    });
+    }
+    else {
+         toastr.error("There was an error getting your data", "Data Failure");  
+    }
+          
+    );
 }
 
 
