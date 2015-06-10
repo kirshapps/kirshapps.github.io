@@ -168,9 +168,6 @@ function step2() {
        document.getElementById('step1').innerHTML = 'Welcome, ' + response.first_name;
        populateSelect(select, response);
     }
-    else {
-         toastr.error("There was an error getting your data", "Data Failure");  
-    }
           
     );
 }
