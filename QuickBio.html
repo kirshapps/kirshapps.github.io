@@ -86,6 +86,14 @@ function findTextForTags(tags) {
 }
     
 function formatText(formatInfo) {
+    fbData["sport1"] = fbData.sports[0].name;
+    fbData["sport2"] = fbData.sports[1].name;
+    
+    fbData["ath1"] = fbData.favorite_athletes[0].name;
+    fbData["ath2"] = fbData.favorite_athletes[1].name;
+    
+    
+
     var finalString = format(formatInfo.text, fbData);
     console.log(finalString);
 }
