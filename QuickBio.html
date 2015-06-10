@@ -70,8 +70,16 @@ var bioFormats = [
 
 function findTextForTags(tags) {
     
+    bioFormats[0].tag.sort();
+    bioFormats[1].tag.sort();
+    bioFormats[2].tag.sort();
+    bioFormats[3].tag.sort();
+    bioFormats[4].tag.sort();
+    bioFormats[5].tag.sort();
+    bioFormats[6].tag.sort();
+    bioFormats[7].tag.sort();
+   
     for (var y = 0; y < bioFormats.length; y++) {
-        bioFormats[y].tag.sort();
         if (bioFormats[y].tag === tags) {
             console.log(bioFormats[y].tag);
         }
