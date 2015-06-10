@@ -69,23 +69,14 @@ var bioFormats = [
     
 
 function findTextForTags(tags) {
-    
-    bioFormats[0].tag.sort();
-    bioFormats[1].tag.sort();
-    bioFormats[2].tag.sort();
-    bioFormats[3].tag.sort();
-    bioFormats[4].tag.sort();
-    bioFormats[5].tag.sort();
-    bioFormats[6].tag.sort();
-    bioFormats[7].tag.sort();
    
     for (var y = 0; y < bioFormats.length; y++) {
-        if (bioFormats[y].tag === tags) {
+        if ($(tags).not(bioFormats[y].tag).length === 0 && $(bioFormats[y].tag).not(tags).length === 0) {
             console.log(bioFormats[y].tag);
         }
     }
     
-    console.log(possibleFormats);
+    
 }
 
 
