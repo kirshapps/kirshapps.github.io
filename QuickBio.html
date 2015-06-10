@@ -42,11 +42,11 @@ var bioFormats = [
     },
     {
     tag:["first_name","last_name", "quotes"],
-    text:"{quote}. This is a quote that inspires {first_name} {last_name}."
+    text:"{quotes}. This is a quote that inspires {first_name} {last_name}."
     },
     {
     tag:["first_name","last_name", "email","quotes"],
-    text:"{quote}. This is a quote that inspires {first_name} {last_name}. You can email him at {email}"
+    text:"{quotes}. This is a quote that inspires {first_name} {last_name}. You can email him at {email}"
     },
     {
     tag:["first_name","last_name", "email", "sports"],
@@ -54,15 +54,15 @@ var bioFormats = [
     },
     {
     tag:["first_name","last_name", "quotes", "sports"],
-    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. I enjoy sports like {sport1}. My favourite quote is {quote}"
+    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. I enjoy sports like {sport1}. My favourite quote is {quotes}"
     },
     {
     tag:["first_name","last_name", "quotes", "sports", "favorite_athletes"],
-    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. I enjoy {sport1}. My favorite athlete is {ath1}. My favourite quote is {quote}."
+    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. I enjoy {sport1}. My favorite athlete is {ath1}. My favourite quote is {quotes}."
     },
     {
     tag:["first_name","last_name", "quotes", "favorite_athletes"],
-    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. My favorite athlete is {ath1}. My favourite quote is {quote}."
+    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. My favorite athlete is {ath1}. My favourite quote is {quotes}."
     },
     {},
     {}
@@ -188,7 +188,7 @@ function step2() {
     document.getElementById('add-data-button').style.display = 'inline-block';
     document.getElementById('done-button').style.display = 'block';
     console.log(select);
-    FB.api("/me?fields=sports,relationship_status,gender,inspirational_people,interested_in,favorite_athletes,favorite_teams,quotes,first_name,last_name", function (response) {
+    FB.api("/me?fields=sports,relationship_status,gender,inspirational_people,interested_in,favorite_athletes,favorite_teams,quotes,first_name,last_name,email", function (response) {
        console.log(response);
        fbData = response;
        document.getElementById('step1').innerHTML = 'Welcome, ' + response.first_name;
