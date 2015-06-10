@@ -25,6 +25,7 @@
 <script>
     
 var fbData = [];
+var selectedFormat = [];
     
 var bioFormats = [
     {
@@ -69,14 +70,24 @@ var bioFormats = [
     
 
 function findTextForTags(tags) {
-   
-    for (var y = 0; y < bioFormats.length; y++) {
+   for (var y = 0; y < bioFormats.length; y++) {
         if ($(tags).not(bioFormats[y].tag).length === 0 && $(bioFormats[y].tag).not(tags).length === 0) {
-            console.log(bioFormats[y].tag);
+            selectedFormat = bioFormats[y];
+            break;
         }
-    }
+   }
     
+   if (selectedFormat != nil) {
+       formatText(selectedFormat);
+   }
+   else {
+       toastr.warning("Try a different combination");
+   }
+}
     
+function formatText(formatInfo) {
+    var finalString = format(formatInfo.text, fbData);
+    console.log(finalString);
 }
 
 
