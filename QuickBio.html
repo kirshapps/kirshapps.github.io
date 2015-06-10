@@ -108,10 +108,10 @@ function formatText(formatInfo) {
     
      if ($.inArray("favorite_athletes", formatInfo.tag)) {
         if (fbData.favorite_athletes.length == 1) {
-            fbData.athleteStrings = format(athleteStrings[0], [fbData.favorite_athletes[0].name]);   
+            fbData.athleteString = format(athleteStrings[0], [fbData.favorite_athletes[0].name]);   
         }
         if (fbData.favorite_athletes.length == 2) {
-            fbData.athleteStrings = format(athleteStringsStrings[1], [fbData.favorite_athletes[0].name, fbData.favorite_athletes[1].name]); 
+            fbData.athleteString = format(athleteStringsStrings[1], [fbData.favorite_athletes[0].name, fbData.favorite_athletes[1].name]); 
         }
      }
        
