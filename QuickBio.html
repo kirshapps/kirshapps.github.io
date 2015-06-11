@@ -57,7 +57,16 @@ function findTextForTags(tags) {
           }
           
           var selectedString = sportsStrings[sportsStrings.length - count];
+           
+          if (count == 1) {
+          var formattedString = format(selectedString, {sport1:fbData.sports[0].name});
+          }
+           if (count == 2) {
+          var formattedString = format(selectedString, {sport1:fbData.sports[0].name, sport2:fbData.sports[1].name});
+          }
+           if (count == 3) {
           var formattedString = format(selectedString, {sport1:fbData.sports[0].name, sport2:fbData.sports[1].name, sport3:fbData.sports[2].name});
+          }
            
           endingString = endingString + formattedString;
     
@@ -67,9 +76,23 @@ function findTextForTags(tags) {
           for (var y = 0; y < fbData.inspirational_people.length; y++) {
               count++;
           }
+            
+          
           
           var selectedString = insStrings[insStrings.length - count];
+            
+          if (count == 1) {
+          var formattedString = format(selectedString, {sport1:fbData.inspirational_people[0].name});
+              
+          }
+          if (count == 2) {
+          var formattedString = format(selectedString, {sport1:fbData.inspirational_people[0].name, sport2:fbData.inspirational_people[1].name});
+              
+          }
+         if (count == 3) {
           var formattedString = format(selectedString, {sport1:fbData.inspirational_people[0].name, sport2:fbData.inspirational_people[1].name, sport3:fbData.inspirational_people[2].name});
+              
+          }
            
           endingString = endingString + formattedString;
        }
