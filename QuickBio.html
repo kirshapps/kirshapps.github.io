@@ -122,7 +122,7 @@ FB.getLoginStatus(function(response) {
   }
   else {
      FB.login(function(response) {
-     if (checkLoginStatus()) {
+     if (response.status === 'connected') {
          step2();
      }
     else {
