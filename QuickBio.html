@@ -143,13 +143,7 @@ FB.getLoginStatus(function(response) {
          step2();
      }
     else {
-        toastr.error("Your login failed, please try again. We're trying once more.", "Login Failed");
-        if (checkLoginStatus()) {
-            step2();
-        }
-        else {
-            toastr.error("Your login failed, please try again.", "Login Failed");
-        }
+        toastr.warning("Try clicking the login button once more.", "Login Failed");
     }
     }, {scope:'public_profile,email,user_about_me,user_relationships,user_relationship_details,user_likes,user_birthday,user_work_history'});
   }
