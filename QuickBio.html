@@ -26,87 +26,78 @@
     
 var fbData = [];
 var selectedFormat = [];
+var endingString = "";
+
+/* sports,relationship_status,gender,inspirational_people,interested_in,favorite_athletes,favorite_teams,quotes,first_name,last_name,email
+*/
     
-var bioFormats = [
-    {
-    tag:["first_name"],
-    text:"Hello, my name is {first_name}"     
-    },
-    {
-    tag:["first_name","last_name"],
-    text:"Hello, my name is {first_name} {last_name}"    
-    },
-    {
-    tag:["first_name","last_name", "email"],
-    text:"Hello, my name is {first_name} {last_name}. You can email me at {email}"
-    },
-    {
-    tag:["first_name","last_name", "quotes"],
-    text:"{quotes}. This is a quote that inspires {first_name} {last_name}."
-    },
-    {
-    tag:["first_name","last_name", "email","quotes"],
-    text:"{quotes}. This is a quote that inspires {first_name} {last_name}. You can email him at {email}"
-    },
-    {
-    tag:["first_name","last_name", "email", "sports"],
-    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. I enjoy sports like {sport1}."
-    },
-    {
-    tag:["first_name","last_name", "quotes", "sports"],
-    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. I enjoy sports like {sport1}. My favourite quote is {quotes}"
-    },
-    {
-    tag:["first_name","last_name", "quotes", "sports", "favorite_athletes"],
-    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. I enjoy {sport1}. My favorite athlete is {ath1}. My favourite quote is {quotes}."
-    },
-    {
-    tag:["first_name","last_name", "quotes", "favorite_athletes"],
-    text:"Hello, my name {first_name} {last_name}. You can email me at {email}. My favorite athlete is {ath1}. My favourite quote is {quotes}."
-    },
-    {},
-    {}
-];
+var sportsStrings = ["My favorite sports are {sport1}, {sport2} and {sport3}.", "My favorite sports are {sport1} and {sport2}.", "My favorite sport is {sport1}."];
+    
+var genderString = ["I am a {gender}"];
+    
+var athleteStrings = ["My favorite athletes are {ath1}, {ath2} and {ath3}", "My favorite athletes are {ath1} and {ath2}", "My favorite athlete is {ath1}"];
+
+var insStrings = ["I am inspired by {ins1}, {ins2} and {ins3}", "I am inspired by {ins1} and {ins2}", "I am inspired by {ins1}"];
+    
+var teamStrings = ["My favorite teams are the {team1}, the {team2} and the {team3}", "My favorite teams are the {team1} and the {team2}", "My favorite team is the {team1}"];
+    
+var quoteString = ["My favorite quoe is {quoteText}, which was said by {quoteAuthor}"];
+    
+var nameStrings = ["My name is {first_name}", "My name is {first_name} {last_name}"];
+    
+var emailString = "You can contact me at {email}";
     
 
 function findTextForTags(tags) {
-   for (var y = 0; y < bioFormats.length; y++) {
-        if ($(tags).not(bioFormats[y].tag).length === 0 && $(bioFormats[y].tag).not(tags).length === 0) {
-            selectedFormat = bioFormats[y];
-            break;
-        }
-   }
+   for (var x = 0; x < tags.length; x++) {
+       if (tags[x] === "sports") {
+          var count = 0;
+          for (var y = 0; y < fbData.sports.length; y++) {
+              count++;
+          }
+          
+          var selectedString = sportsStrings[sportsStrings.length - count];
+          var formattedString = format(selectedString, {sport1:fbData.sports[0].name, sport2:fbData.sports[1].name, sport3:fbData.sports[2].name});
+           
+          endingString = endingString + formattedString;
     
-   if (selectedFormat != null) {
-       formatText(selectedFormat);
+       }
+        if (tags[x] === "inspirational_people") {
+           var count = 0;
+          for (var y = 0; y < fbData.inspirational_people.length; y++) {
+              count++;
+          }
+          
+          var selectedString = insStrings[insStrings.length - count];
+          var formattedString = format(selectedString, {sport1:fbData.inspirational_people[0].name, sport2:fbData.inspirational_people[1].name, sport3:fbData.inspirational_people[2].name});
+           
+          endingString = endingString + formattedString;
+       }
+        if (tags[x] === "favorite_athletes") {
+           
+       }
+        if (tags[x] === "favorite_teams") {
+           
+       }
+        if (tags[x] === "inspirational_people") {
+           
+       }
+        if (tags[x] === "first_name") {
+           
+       }
+       if (tags[x] === "gender") {
+           
+       }
+       if (tags[x] === "quotes") {
+           
+       }
+       
+       
    }
-   else {
-       toastr.warning("Try a different combination");
-   }
+   
+  console.log(endingString);
 }
-    
-function formatText(formatInfo) {
-    try {
-    fbData["sport1"] = fbData.sports[0].name;
-    }catch(e) {
-        toastr.error("Please add more data to your Facebook for this to work");
-    }
-    
-    
-    try {
-    fbData["ath1"] = fbData.favorite_athletes[0].name;
-    }catch(e) {
-        toastr.error("Please add more data to your Facebook for this to work");
-    }
-    
-    
 
-    var finalString = format(formatInfo.text, fbData);
-    console.log(finalString);
-}
-
-
-    
 var startDate = 1432955433871;
     
 var selectionCount = 1;
