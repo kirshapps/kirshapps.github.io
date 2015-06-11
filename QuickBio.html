@@ -226,12 +226,7 @@ else {
 }
 
 function login() {
-FB.getLoginStatus(function(response) {
-  if (response.status === 'connected') {
-     step2();
-  }
-  else {
-     FB.login(function(response) {
+FB.login(function(response) {
      if (checkLoginStatus()) {
          step2();
      }
@@ -239,8 +234,6 @@ FB.getLoginStatus(function(response) {
         toastr.error("Your login failed, please try again.", "Login Failed");
     }
     }, {scope:'public_profile,email,user_about_me,user_relationships,user_relationship_details,user_likes,user_birthday,user_work_history'});
-  }
-});
 }
 
 function checkLoginStatus() {
