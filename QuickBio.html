@@ -1,15 +1,5 @@
 <html>
 <head>
-<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
-<script src="format.js"></script>
-
-
-<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-<link rel="stylesheet" href="font-awesome.css">
-    
 <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -23,10 +13,15 @@
          var js, fjs = d.getElementsByTagName(s)[0];
          if (d.getElementById(id)) {return;}
          js = d.createElement(s); js.id = id;
-         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         js.src = "http://connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
 </script>
+<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
+<script src="format.js"></script>
+
 <script>
     
 var fbData = [];
@@ -86,7 +81,7 @@ function findTextForTags(tags) {
        formatText(selectedFormat);
    }
    else {
-       toastr.warning("Try a different combination of information");
+       toastr.warning("Try a different combination");
    }
 }
     
@@ -103,9 +98,6 @@ function formatText(formatInfo) {
     }catch(e) {
         toastr.error("Please add more data to your Facebook for this to work");
     }
-    
-   
-    
     
     
 
@@ -141,19 +133,21 @@ else {
 }
 
 function login() {
-    if (checkLoginStatus()) {
-        step2();
-    }
-    else {
-        FB.login(function(response) {
+FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+     step2();
+  }
+  else {
+     FB.login(function(response) {
      if (checkLoginStatus()) {
          step2();
      }
     else {
         toastr.error("Your login failed, please try again.", "Login Failed");
     }
-    }, {scope:'public_profile,email,user_about_me,user_relationships,user_relationship_details,user_likes,user_birthday,user_work_history'}); 
-    }
+    }, {scope:'public_profile,email,user_about_me,user_relationships,user_relationship_details,user_likes,user_birthday,user_work_history'});
+  }
+});
 }
 
 function checkLoginStatus() {
@@ -180,7 +174,7 @@ function startup() {
         step2();
     }
     else {
-        
+        login();
     }
 }
     
@@ -254,7 +248,9 @@ function collectOptions() {
 }
 
 </script>
-    
+<link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<link rel="stylesheet" href="font-awesome.css">
 <style>
 #header1 {
   text-align: center;
