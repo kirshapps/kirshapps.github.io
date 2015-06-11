@@ -58,9 +58,14 @@ var endingString;
                     for (var y = 0; y < fbData.sports.length; y++) {
                         count++;
                     }
-
+                    
+                    if (count > 3) {
+                       var selectedString = sportsStrings[0]; 
+                    }
+                    else {
                     var selectedString = sportsStrings[sportsStrings.length -
                         count];
+                    }
 
                     if (count == 1) {
                         var formattedString = format(selectedString, {
@@ -96,8 +101,13 @@ var endingString;
                         count++;
                     }
 
+                    if (count > 3) {
+                        var selectedString = insStrings[0];
+                    }
+                    else {
                     var selectedString = insStrings[insStrings.length -
                         count];
+                    }
 
                     if (count == 1) {
                         var formattedString = format(selectedString, {
