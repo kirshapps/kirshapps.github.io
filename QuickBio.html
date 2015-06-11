@@ -141,14 +141,19 @@ else {
 }
 
 function login() {
-FB.login(function(response) {
+    if (checkLoginStatus()) {
+        step2();
+    }
+    else {
+        FB.login(function(response) {
      if (checkLoginStatus()) {
          step2();
      }
     else {
         toastr.error("Your login failed, please try again.", "Login Failed");
     }
-    }, {scope:'public_profile,email,user_about_me,user_relationships,user_relationship_details,user_likes,user_birthday,user_work_history'});
+    }, {scope:'public_profile,email,user_about_me,user_relationships,user_relationship_details,user_likes,user_birthday,user_work_history'}); 
+    }
 }
 
 function checkLoginStatus() {
@@ -160,8 +165,6 @@ function checkLoginStatus() {
             return false;
         }
     });
-    
-    
 }
     
 function startup() {
@@ -177,6 +180,7 @@ function startup() {
         step2();
     }
     else {
+        
     }
 }
     
