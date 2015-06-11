@@ -1,22 +1,5 @@
 <html>
 <head>
-<script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '812506892178397',
-          xfbml      : true,
-          version    : 'v2.3'
-        });
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "http://connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-</script>
 <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
@@ -159,6 +142,8 @@ function checkLoginStatus() {
             return false;
         }
     });
+    
+    
 }
     
 function startup() {
@@ -340,6 +325,23 @@ select {
 <title>Making your biography's simple since a long time ago</title>  
 </head>
 <body onload="startup()">
+<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '812506892178397',
+          xfbml      : true,
+          version    : 'v2.3'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "http://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+</script>
 <h1 id="header1">QuickBio</h1>
 <div class="line-separator"></div>
 <h2 id="step1">Step 1:</h2>
