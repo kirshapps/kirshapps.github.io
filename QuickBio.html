@@ -7,97 +7,9 @@
 
 
 <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 <link rel="stylesheet" href="font-awesome.css">
-<style>
-#header1 {
-  text-align: center;
-  font-family: 'Bree Serif', serif;
-  font-size: 75px;
-  color: rgb(39,39,38);
-}
-#step1 {
-  text-align: center;
-  font-family: 'Bree Serif', serif;
-  font-size: 50px;
-  color: rgb(39,39,38);
-}
-body {
-  background-color: rgb(237,239,235);
-}
-.line-separator{
-height:1px;
-background:rgb(255,205,82);
-border-bottom:1px solid rgb(249,80,82);
-}
-.button {
-    background-color: rgb(249,80,82);
-    border-radius: 4px;
-    width: 160px;
-    color: rgb(237,239,235);
-    height: 80px;
-    font-family: 'Bree Serif', serif;
-    font-size:30px;
-}
     
-.button2 {
-    background-color: rgb(249,80,82);
-    border-radius: 4px;
-    width: 120px;
-    color: rgb(237,239,235);
-    height: 60px;
-    font-family: 'Bree Serif', serif;
-    font-size:30px;
-}
-
-select {
-    padding:3px;
-    margin: 0;
-    -webkit-border-radius:4px;
-    -moz-border-radius:4px;
-    border-radius:4px;
-    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-    background: #f8f8f8;
-    color:#888;
-    border:none;
-    outline:none;
-    display: inline-block;
-    -webkit-appearance:none;
-    -moz-appearance:none;
-    appearance:none;
-    cursor:pointer;
-    margin-left: 4px;
-}
-#openingtext {
-  font-family: 'Bree Serif', serif;
-  font-size: 20px;
-  color: rgb(39,39,38); 
-}
-#endingtext {
-  font-family: 'Bree Serif', serif;
-  font-size: 20px;
-  color: rgb(39,39,38); 
-}
-#add-data-button {
-   background-color: transparent;
-   font-family: 'Bree Serif', serif;
-   border: none;
-   font-size: 20px;
-   cursor:pointer;
-   overflow: hidden;
-   outline:none; 
-}
-
-/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    select {padding-right:18px}
-}
-</style>
-<title>Making your biography's simple since a long time ago</title>  
-</head>
-<body onload="startup()">
 <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -265,7 +177,6 @@ function startup() {
         step2();
     }
     else {
-        login();
     }
 }
     
@@ -339,6 +250,96 @@ function collectOptions() {
 }
 
 </script>
+    
+<style>
+#header1 {
+  text-align: center;
+  font-family: 'Bree Serif', serif;
+  font-size: 75px;
+  color: rgb(39,39,38);
+}
+#step1 {
+  text-align: center;
+  font-family: 'Bree Serif', serif;
+  font-size: 50px;
+  color: rgb(39,39,38);
+}
+body {
+  background-color: rgb(237,239,235);
+}
+.line-separator{
+height:1px;
+background:rgb(255,205,82);
+border-bottom:1px solid rgb(249,80,82);
+}
+.button {
+    background-color: rgb(249,80,82);
+    border-radius: 4px;
+    width: 160px;
+    color: rgb(237,239,235);
+    height: 80px;
+    font-family: 'Bree Serif', serif;
+    font-size:30px;
+}
+    
+.button2 {
+    background-color: rgb(249,80,82);
+    border-radius: 4px;
+    width: 120px;
+    color: rgb(237,239,235);
+    height: 60px;
+    font-family: 'Bree Serif', serif;
+    font-size:30px;
+}
+
+select {
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+    margin-left: 4px;
+}
+#openingtext {
+  font-family: 'Bree Serif', serif;
+  font-size: 20px;
+  color: rgb(39,39,38); 
+}
+#endingtext {
+  font-family: 'Bree Serif', serif;
+  font-size: 20px;
+  color: rgb(39,39,38); 
+}
+#add-data-button {
+   background-color: transparent;
+   font-family: 'Bree Serif', serif;
+   border: none;
+   font-size: 20px;
+   cursor:pointer;
+   overflow: hidden;
+   outline:none; 
+}
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select {padding-right:18px}
+}
+</style>
+<title>Making your biography's simple since a long time ago</title>  
+</head>
+<body onload="startup()">
 <h1 id="header1">QuickBio</h1>
 <div class="line-separator"></div>
 <h2 id="step1">Step 1:</h2>
