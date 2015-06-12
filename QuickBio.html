@@ -166,56 +166,7 @@ var endingString = "";
                     endingString = endingString + formattedString + " ";
                 }
                 if (tags[x] === "favorite_athletes") {
-                    var count = 0;
-                    for (var y = 0; y < fbData.favorite_athletes.length; y++) {
-                        count++;
-                    }
-
-                    if (count > 3) {
-                        var selectedString = athleteStrings[0];
-                    }
-                    else {
-                    var selectedString = athleteStrings[athleteStrings.length -
-                        count];
-                    }
-
-                    if (count == 1) {
-                        var formattedString = format(selectedString, {
-                            ath1: fbData.favorite_athletes[
-                                0].name
-                        });
-
-                    }
-                    else if (count == 2) {
-                        var formattedString = format(selectedString, {
-                            ath1: fbData.favorite_athletes[
-                                0].name,
-                            ath2: fbData.favorite_athletes[
-                                1].name
-                        });
-
-                    }
-                    else if (count == 3) {
-                        var formattedString = format(selectedString, {
-                            ath1: fbData.favorite_athletes[
-                                0].name,
-                            ath2: fbData.favorite_athletes[
-                                1].name,
-                            ath3: fbData.favorite_athletes[
-                                2].name
-                        });
-                    } else {
-                        var formattedString = format(selectedString, {
-                            ath1: fbData.favorite_athletes[
-                                0].name,
-                            ath2: fbData.favorite_athletes[
-                                1].name,
-                            ath3: fbData.favorite_athletes[
-                                2].name
-                        });
-                    }
                     
-                  endingString = endingString + formattedString + " ";
 
                 }
                 if (tags[x] === "favorite_teams") {
