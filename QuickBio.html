@@ -28,6 +28,7 @@ window.fbAsyncInit = function() {
 var fbData = [];
 var selectedFormat = [];
 var endingString = "";
+var responseData;
     
 /* sports,relationship_status,gender,inspirational_people,interested_in,favorite_athletes,favorite_teams,quotes,first_name,last_name,email
          */
@@ -286,7 +287,7 @@ function step2() {
     document.getElementById('done-button').style.display = 'block';
     console.log(select);
     FB.api("/me?fields=sports,relationship_status,gender,inspirational_people,interested_in,favorite_athletes,favorite_teams,quotes,first_name,last_name,email", function (response) {
-       if (response.status === "connected") {
+        if (response && !response.error) {
        console.log(response);
        fbData = response;
        document.getElementById('step1').innerHTML = 'Welcome, ' + response.first_name;
@@ -295,7 +296,6 @@ function step2() {
        else {
         toastr.error("We could not get your data, please try again later");    
         }
-        console.log(response.status);
     }
           
     );
