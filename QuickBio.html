@@ -162,8 +162,10 @@ function handleText(tag, strings, keys) {
        }
     }
     
+    var data = fbData[tag];
+    
 	var count = 0;
-	for (var y = 0; y < fbData[tag].length; y++) {
+	for (var y = 0; y < data.length; y++) {
 		count++;
 	}
 
@@ -176,34 +178,32 @@ function handleText(tag, strings, keys) {
 
 	if (count == 1) {
 		var formattedString = format(selectedString, {
-			key1: fbData.tag[
+			key1: data[
 				0].name
 		});
 
 	} else if (count == 2) {
 		var formattedString = format(selectedString, {
-			key1: fbData.tag[
-				0].name,
-			key2: fbData.tag[
-				1].name
+			key1: data[0].name,
+			key2: data[1].name
 		});
 
 	} else if (count == 3) {
 		var formattedString = format(selectedString, {
-			key1: fbData.tag[
+			key1: data[
 				0].name,
-			key2: fbData.tag[
+			key2: data[
 				1].name,
-			key3: fbData.tag[
+			key3: data[
 				2].name
 		});
 	} else {
 		var formattedString = format(selectedString, {
-			key1: fbData.tag[
+			key1: data[
 				0].name,
-			key2: fbData.tag[
+			key2: data[
 				1].name,
-			key3: fbData.tag[
+			key3: data[
 				2].name
 		});
 	}
