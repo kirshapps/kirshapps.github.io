@@ -60,7 +60,7 @@ var responseData;
         ];
 
         var quoteString = [
-            "My favorite quoe is {quoteText}, which was said by {quoteAuthor}"
+            "My favorite quote is {quoteText}, which was said by {quoteAuthor}"
         ];
 
         var nameStrings = ["My name is {first_name}",
@@ -73,167 +73,26 @@ var responseData;
         function findTextForTags(tags) {
             for (var x = 0; x < tags.length; x++) {
                 if (tags[x] === "sports") {
-                    var count = 0;
-                    for (var y = 0; y < fbData.sports.length; y++) {
-                        count++;
-                    }
-                    
-                    if (count > 3) {
-                       var selectedString = sportsStrings[0]; 
-                    }
-                    else {
-                    var selectedString = sportsStrings[sportsStrings.length -
-                        count];
-                    }
-
-                    if (count == 1) {
-                        var formattedString = format(selectedString, {
-                            sport1: fbData.sports[0].name
-                        });
-                    }
-                    else if (count == 2) {
-                        var formattedString = format(selectedString, {
-                            sport1: fbData.sports[0].name,
-                            sport2: fbData.sports[1].name
-                        });
-                    }
-                    else if (count == 3) {
-                        var formattedString = format(selectedString, {
-                            sport1: fbData.sports[0].name,
-                            sport2: fbData.sports[1].name,
-                            sport3: fbData.sports[2].name
-                        });
-                    } else {
-                        var formattedString = format(selectedString, {
-                            sport1: fbData.sports[0].name,
-                            sport2: fbData.sports[1].name,
-                            sport3: fbData.sports[2].name
-                        });
-                    }
-
-                    endingString = endingString + formattedString + " ";
-
+                    handleText("sports", sportsStrings, ["sport1", "sport2", "sport3"]);
                 }
                 if (tags[x] === "inspirational_people") {
-                    var count = 0;
-                    for (var y = 0; y < fbData.inspirational_people.length; y++) {
-                        count++;
-                    }
-
-                    if (count > 3) {
-                        var selectedString = insStrings[0];
-                    }
-                    else {
-                    var selectedString = insStrings[insStrings.length -
-                        count];
-                    }
-
-                    if (count == 1) {
-                        var formattedString = format(selectedString, {
-                            ins1: fbData.inspirational_people[
-                                0].name
-                        });
-
-                    }
-                    else if (count == 2) {
-                        var formattedString = format(selectedString, {
-                            ins1: fbData.inspirational_people[
-                                0].name,
-                            ins2: fbData.inspirational_people[
-                                1].name
-                        });
-
-                    }
-                    else if (count == 3) {
-                        var formattedString = format(selectedString, {
-                            ins1: fbData.inspirational_people[
-                                0].name,
-                            ins2: fbData.inspirational_people[
-                                1].name,
-                            ins3: fbData.inspirational_people[
-                                2].name
-                        });
-                    } else {
-                        var formattedString = format(selectedString, {
-                            ins1: fbData.inspirational_people[
-                                0].name,
-                            ins2: fbData.inspirational_people[
-                                1].name,
-                            ins3: fbData.inspirational_people[
-                                2].name
-                        });
-                    }
-
-                    endingString = endingString + formattedString + " ";
+                    handleText("inspirational_people", insStrings, ["ins1", "ins2", "ins3"]);
                 }
                 if (tags[x] === "favorite_athletes") {
-                    var count = 0;
-                    for (var y = 0; y < fbData.favorite_athletes.length; y++) {
-                        count++;
-                    }
-
-                    if (count > 3) {
-                        var selectedString = athleteStrings[0];
-                    }
-                    else {
-                    var selectedString = athleteStrings[athleteStrings.length -
-                        count];
-                    }
-
-                    if (count == 1) {
-                        var formattedString = format(selectedString, {
-                            ath1: fbData.favorite_athletes[
-                                0].name
-                        });
-
-                    }
-                    else if (count == 2) {
-                        var formattedString = format(selectedString, {
-                            ath1: fbData.favorite_athletes[
-                                0].name,
-                            ath2: fbData.favorite_athletes[
-                                1].name
-                        });
-
-                    }
-                    else if (count == 3) {
-                        var formattedString = format(selectedString, {
-                            ath1: fbData.favorite_athletes[
-                                0].name,
-                            ath2: fbData.favorite_athletes[
-                                1].name,
-                            ath3: fbData.favorite_athletes[
-                                2].name
-                        });
-                    } else {
-                        var formattedString = format(selectedString, {
-                            ath1: fbData.favorite_athletes[
-                                0].name,
-                            ath2: fbData.favorite_athletes[
-                                1].name,
-                            ath3: fbData.favorite_athletes[
-                                2].name
-                        });
-                    }
-
-                    endingString = endingString + formattedString + " ";
+                    handleText("favorite_athletes", athleteStrings, ["ath1", "ath2", "ath3"]);
                 }
                 if (tags[x] === "favorite_teams") {
-
-                }
-                if (tags[x] === "inspirational_people") {
-
-                }
-                if (tags[x] === "first_name") {
-
+                    handleText("favorite_teams", teamStrings, ["team1", "team2", "team3"]);
                 }
                 if (tags[x] === "gender") {
-
+                    handleText("gender", genderString, ["gender"]);
                 }
                 if (tags[x] === "quotes") {
-
+                    var quoteInfo = fbData.quotes[0].split('-');
+                    var bioQuoteText = format(quoteString, {quoteText:quoteInfo[0], quoteAuthor:quoteInfo[1]});
+                    
+                    endingString = endingString + bioQuoteText + " ";
                 }
-            }
             
             console.log(endingString);
         }
@@ -283,6 +142,56 @@ FB.getLoginStatus(function(response) {
     }, {scope:'public_profile,email,user_about_me,user_relationships,user_relationship_details,user_likes,user_birthday,user_work_history'});
   }
 });
+}
+    
+function handleText(tag, strings, keys) {
+	var count = 0;
+	for (var y = 0; y < fbData.[tag].length; y++) {
+		count++;
+	}
+
+	if (count > 3) {
+		var selectedString = strings[0];
+	} else {
+		var selectedString = strings[strings.length -
+			count];
+	}
+
+	if (count == 1) {
+		var formattedString = format(selectedString, {
+			keys[0]: fbData.tag[
+				0].name
+		});
+
+	} else if (count == 2) {
+		var formattedString = format(selectedString, {
+			keys[0]: fbData.tag[
+				0].name,
+			keys[1]: fbData.tag[
+				1].name
+		});
+
+	} else if (count == 3) {
+		var formattedString = format(selectedString, {
+			kesy[0]: fbData.tag[
+				0].name,
+			keys[1]: fbData.tag[
+				1].name,
+			keys[2]: fbData.tag[
+				2].name
+		});
+	} else {
+		var formattedString = format(selectedString, {
+			keys[0]: fbData.tag[
+				0].name,
+			keys[1]: fbData.tag[
+				1].name,
+			keys[2]: fbData.tag[
+				2].name
+		});
+	}
+
+	endingString = endingString + formattedString + " ";
 }
     
 window.fbAsyncInit = function() {
