@@ -146,17 +146,16 @@ FB.getLoginStatus(function(response) {
     
 function handleText(tag, strings, keys) {
     
-    try {
-    var key1 = keys[0];
-    }catch(e) {
-    }
-    try {
-    var key2 = keys[1];
-    }catch(e){
-    }
-    try {
-    var key3 = keys[2];
-    }catch(e) {
+    for (var x = 0; x < keys.length; x++) {
+       if (x == 0) {
+          var key1 = keys[x]; 
+       }
+       if (x == 1) {
+          var key2 = keys[x];  
+       }
+       if (x == 2) {
+          var key3 = keys[x]; 
+       }
     }
     
 	var count = 0;
