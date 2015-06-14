@@ -145,6 +145,20 @@ FB.getLoginStatus(function(response) {
 }
     
 function handleText(tag, strings, keys) {
+    
+    try {
+    var key1 = keys[0];
+    }catch(e) {
+    }
+    try {
+    var key2 = keys[1];
+    }catch(e){
+    }
+    try {
+    var key3 = keys[2];
+    }catch(e) {
+    }
+    
 	var count = 0;
 	for (var y = 0; y < fbData[tag].length; y++) {
 		count++;
@@ -159,34 +173,34 @@ function handleText(tag, strings, keys) {
 
 	if (count == 1) {
 		var formattedString = format(selectedString, {
-			keys[0]: fbData.tag[
+			key1: fbData.tag[
 				0].name
 		});
 
 	} else if (count == 2) {
 		var formattedString = format(selectedString, {
-			keys[0]: fbData.tag[
+			key1: fbData.tag[
 				0].name,
-			keys[1]: fbData.tag[
+			key2: fbData.tag[
 				1].name
 		});
 
 	} else if (count == 3) {
 		var formattedString = format(selectedString, {
-			kesy[0]: fbData.tag[
+			key1: fbData.tag[
 				0].name,
-			keys[1]: fbData.tag[
+			key2: fbData.tag[
 				1].name,
-			keys[2]: fbData.tag[
+			key3: fbData.tag[
 				2].name
 		});
 	} else {
 		var formattedString = format(selectedString, {
-			keys[0]: fbData.tag[
+			key1: fbData.tag[
 				0].name,
-			keys[1]: fbData.tag[
+			key2: fbData.tag[
 				1].name,
-			keys[2]: fbData.tag[
+			key3: fbData.tag[
 				2].name
 		});
 	}
