@@ -194,11 +194,14 @@ function handleText(tag, strings, keys) {
 
 	} else if (count == 2) {
         
-        console.log("Format");
-		console.log(format(selectedString, {
+        console.log("Key and Data");
+        console.log(key1 + ":" + data[0].name);
+        console.log(key2 + ":" + data[1].name);
+        
+		formattedString = format(selectedString, {
 			key1: data[0].name,
 			key2: data[1].name
-		}));
+		});
         
 
 	} else if (count == 3) {
