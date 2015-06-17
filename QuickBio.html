@@ -247,7 +247,9 @@ function checkLoginStatus() {
     
     
 function startup() {
-    console.log(platform);
+    if (platform.name !== "Chrome") {
+        window.location.href = "error.html";
+    }
     var selectBox = document.getElementsByTagName('select');
     var select = selectBox[0];
     select.style.display = 'none';
