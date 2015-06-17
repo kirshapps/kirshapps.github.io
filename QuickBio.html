@@ -31,6 +31,8 @@ var selectedFormat = [];
 var endingString = "";
 var responseData;
     
+var check = location.search.split('check=')[1];
+    
 /* sports,relationship_status,gender,inspirational_people,interested_in,favorite_athletes,favorite_teams,quotes,first_name,last_name,email
          */
 
@@ -248,7 +250,12 @@ function checkLoginStatus() {
     
 function startup() {
     if (platform.name !== "Chrome") {
+        if (check == 1) {
+            
+        }
+        else {
         window.location.href = "error.html";
+        }
     }
     var selectBox = document.getElementsByTagName('select');
     var select = selectBox[0];
