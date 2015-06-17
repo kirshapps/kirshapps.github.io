@@ -198,7 +198,10 @@ function handleText(tag, strings, keys) {
         console.log(key1 + ":" + data[0].name);
         console.log(key2 + ":" + data[1].name);
         
-		formattedString = format(selectedString, {
+        var testString = format("{test}", {test:"Hi"});
+        console.log("Test: " + testString);
+        
+		var formattedString = format(selectedString, {
 			key1: data[0].name,
 			key2: data[1].name
 		});
