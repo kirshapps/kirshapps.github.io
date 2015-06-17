@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
 <script src="format.js"></script>
-<script src="platform.js"></script>
+
     
 <script>
 window.fbAsyncInit = function() {
@@ -226,13 +226,7 @@ function handleText(tag, strings, keys) {
     
 }
     
-window.fbAsyncInit = function() {
-    FB.init({
-          appId      : '812506892178397',
-          xfbml      : true,
-          version    : 'v2.3'
-    });
-};
+
 
 function checkLoginStatus() {
     FB.getLoginStatus(function(response) {
@@ -247,7 +241,6 @@ function checkLoginStatus() {
     
     
 function startup() {
-    console.log(platform);
     var selectBox = document.getElementsByTagName('select');
     var select = selectBox[0];
     select.style.display = 'none';
