@@ -415,9 +415,6 @@ function collectOptions() {
     bio.innerHTML = endingString;
     bio.id = 'bio';
     d.appendChild(bio);
-    
-    var check = document.createElement('input');
-    check.setAttribute('type', 'checkbox');
 }
 
 </script>
@@ -514,6 +511,10 @@ select {
   font-size: 15px;
   color: rgb(39,39,38);
 }
+.checkbox-text {
+    font-size: 15px;
+    font-family: 'Bree Serif', serif;
+}
 
 /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -537,6 +538,9 @@ select {
 </section>
 <button id="done-button" class="button pure-button" onclick="collectOptions()">Done</button>
 </div>
+<center>
+<input type="checkbox" value="Make public" id="pub"><p class="checkbox-test">Make this biography public</p>
+</center>
 </center>
 </body>
 </html>
