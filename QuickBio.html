@@ -42,35 +42,35 @@ var check = location.search.split('check=')[1];
             "My favorite sport is {sport1}."
         ];
 
-        var genderString = ["I am a {gender}"];
+        var genderString = ["I am a {gender}."];
 
         var athleteStrings = [
-            "My favorite athletes are {ath1}, {ath2} and {ath3}",
-            "My favorite athletes are {ath1} and {ath2}",
-            "My favorite athlete is {ath1}"
+            "My favorite athletes are {ath1}, {ath2} and {ath3}.",
+            "My favorite athletes are {ath1} and {ath2}.",
+            "My favorite athlete is {ath1}."
         ];
 
         var insStrings = [
-            "I am inspired by {ins1}, {ins2} and {ins3}",
-            "I am inspired by {ins1} and {ins2}",
-            "I am inspired by {ins1}"
+            "I am inspired by {ins1}, {ins2} and {ins3}.",
+            "I am inspired by {ins1} and {ins2}.",
+            "I am inspired by {ins1}."
         ];
 
         var teamStrings = [
-            "My favorite teams are the {team1}, the {team2} and the {team3}",
-            "My favorite teams are the {team1} and the {team2}",
-            "My favorite team is the {team1}"
+            "My favorite teams are the {team1}, the {team2} and the {team3}.",
+            "My favorite teams are the {team1} and the {team2}.",
+            "My favorite team is the {team1}."
         ];
 
         var quoteString = [
-            "My favorite quote is {quoteText}, which was said by {quoteAuthor}"
+            "My favorite quote is {quoteText}, which was said by {quoteAuthor}."
         ];
 
-        var nameStrings = ["My name is {first_name}",
-            "My name is {first_name} {last_name}"
+        var nameStrings = ["My name is {first_name}.",
+            "My name is {first_name} {last_name}."
         ];
 
-        var emailString = "You can contact me at {email}";
+        var emailString = "You can contact me at {email}.";
 
 
 
@@ -107,7 +107,7 @@ function findTextForTags(tags) {
 		}
 		if (tags[x] === "quotes") {
 			var quoteInfo = fbData.quotes.split(' - ');
-            quoteInfo[0] = "'" + quoteInfo[0] + "'";
+            quoteInfo[0] = "<i>'" + quoteInfo[0] + "'</i>";
 			var bioQuoteText = format(quoteString[0], {
 				quoteText: quoteInfo[0],
 				quoteAuthor: quoteInfo[1]
@@ -398,6 +398,7 @@ function collectOptions() {
     
     var bio = document.createElement('p');
     bio.innerHTML = endingString;
+    bio.id = 'bio';
     document.body.appendChild(bio);
 }
 
@@ -484,6 +485,12 @@ select {
    cursor:pointer;
    overflow: hidden;
    outline:none; 
+}
+#bio {
+  text-align: center;
+  font-family: 'Bree Serif', serif;
+  font-size: 15px;
+  color: rgb(39,39,38);
 }
 
 /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
