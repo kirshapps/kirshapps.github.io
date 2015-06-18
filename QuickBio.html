@@ -116,6 +116,8 @@ function findTextForTags(tags) {
     if (tags.indexOf('first_name') > -1 && tags.indexOf('last_name') <= -1) {
         endingString = format(endingString, {nameString:format(nameStrings[0], {first_name:fbData['first_name']})});
     }
+    
+    console.log(endingString);
         
     
 }
