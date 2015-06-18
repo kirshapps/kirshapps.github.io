@@ -111,11 +111,13 @@ function findTextForTags(tags) {
     }
     
     if (tags.indexOf('first_name') > -1 && tags.indexOf('last_name') > -1) {
-        endingString = format(endingString,{nameString:format(nameStrings[1], {first_name:fbData['first_name'], last_name:fbData['last_name']});
+        endingString = format(endingString,{nameString:format(nameStrings[1], {first_name:fbData['first_name'], last_name:fbData['last_name']})});
     }
     if (tags.indexOf('first_name') > -1 && tags.indexOf('last_name') =< -1) {
         endingString = format(endingString, {nameString:format(nameStrings[0], {first_name:fbData['first_name']})});
     }
+        
+    
 }
         
     
