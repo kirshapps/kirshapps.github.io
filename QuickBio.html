@@ -187,50 +187,33 @@ function handleText(tag, strings, keys) {
 	}
 
 	if (count == 1) {
-		var formattedString = format(selectedString, {
-			key1: data[
-				0].name
-		});
+        var obj = {};
+        obj[key1] = data[0].name;
+		var formattedString = format(selectedString, obj);
 
 	} 
     
     if (count == 2) {
-        
-        console.log("Key and Data");
-        console.log(key1 + ":" + data[0].name);
-        console.log(key2 + ":" + data[1].name);
-        
-        var testString = format("{test}", {test:"Hi"});
-        console.log("Test: " + testString);
-        
-		var formattedString = format(selectedString, {
-			key1: data[0].name,
-			key2: data[1].name
-		});
-        
-
-	} 
+        var obj = {};
+        obj[key1] = data[0].name;
+        obj[key2] = data[1].name;
+		var formattedString = format(selectedString, obj);
+    } 
     
     if (count == 3) {
-		var formattedString = format(selectedString, {
-			key1: data[
-				0].name,
-			key2: data[
-				1].name,
-			key3: data[
-				2].name
-		});
+        var obj = {};
+        obj[key1] = data[0].name;
+        obj[key2] = data[1].name;
+        obj[key3] = data[2].name;
+		var formattedString = format(selectedString, obj);
 	} 
     
     if (count > 3) {
-		var formattedString = format(selectedString, {
-			key1: data[
-				0].name,
-			key2: data[
-				1].name,
-			key3: data[
-				2].name
-		});
+        var obj = {};
+        obj[key1] = data[0].name;
+        obj[key2] = data[1].name;
+        obj[key3] = data[2].name;
+		var formattedString = format(selectedString, obj);
 	}
     
     console.log(formattedString);
