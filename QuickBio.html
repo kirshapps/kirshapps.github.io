@@ -107,6 +107,8 @@ function findTextForTags(tags) {
 		}
 		if (tags[x] === "quotes") {
 			var quoteInfo = fbData.quotes[0].split('-');
+            console.log(quoteInfo[0]);
+            console.log(quoteInfo[1]);
 			var bioQuoteText = format(quoteString, {
 				quoteText: quoteInfo[0],
 				quoteAuthor: quoteInfo[1]
@@ -141,6 +143,10 @@ function findTextForTags(tags) {
     if (!tags.isInArray("inspirational_people")) {
         endingString = format(endingString, {insString:""});
     }
+    if (!tags.isInArray("first_name")) {
+        endingString = format(endingString, {nameString:""});
+    }
+    
     
     console.log(endingString);
         
