@@ -148,8 +148,6 @@ function findTextForTags(tags) {
     
     
     console.log(endingString);
-        
-    
 }
 
         
@@ -375,6 +373,7 @@ function collectOptions() {
     
     for (var x = 0; x < selects.length; x++) {
         var select = selects[x];
+        select.style.display = 'none';
         var selected = select.options[select.selectedIndex].value;
         selectedItems[x] = selected;
     }
@@ -389,6 +388,14 @@ function collectOptions() {
     
     
     findTextForTags(selectedItems);
+    
+    document.getElementById('step1').innerHTML = 'Here is your biography:';
+    
+    document.getElementById('openingtext').style.display = 'none';
+    document.getElementById('endingtext').style.display = 'none';
+    document.getElementById('add-data-button').style.display = 'none';
+    document.getElementById('done-button').style.display = 'none';
+    
 }
 
 </script>
