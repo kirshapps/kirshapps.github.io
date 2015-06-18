@@ -404,9 +404,12 @@ function collectOptions() {
     document.getElementById('add-data-button').style.display = 'none';
     document.getElementById('done-button').style.display = 'none';
     
+    var center = document.createElement('center');
+    document.body.appendChild(center);
+    
     var d = document.createElement('div');
     d.id = "bioDiv";
-    document.body.appendChild(d);
+    center.appendChild(d);
     
     var bio = document.createElement('p');
     bio.innerHTML = endingString;
@@ -437,8 +440,6 @@ body {
 #bioDiv {
    width:575px;
    height:575px;
-   left: 50%;
-   margin-left: -287.5px;
 }
 .line-separator{
 height:1px;
