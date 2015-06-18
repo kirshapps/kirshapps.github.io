@@ -520,35 +520,7 @@ select {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     select {padding-right:18px}
 }
-input[type=checkbox].css-checkbox {
-							position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
-						}
 
-						input[type=checkbox].css-checkbox + label.css-label {
-							padding-left:32px;
-							height:27px; 
-							display:inline-block;
-							line-height:27px;
-							background-repeat:no-repeat;
-							background-position: 0 0;
-							font-size:27px;
-							vertical-align:middle;
-							cursor:pointer;
-
-						}
-
-						input[type=checkbox].css-checkbox:checked + label.css-label {
-							background-position: 0 -27px;
-						}
-						label.css-label {
-				background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_bce24e972f9de57735350efff79f574c.png);
-				-webkit-touch-callout: none;
-				-webkit-user-select: none;
-				-khtml-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-			}
 
 </style>
 <title>Making your biography's simple since a long time ago</title>  
@@ -568,8 +540,8 @@ input[type=checkbox].css-checkbox {
 </section>
 <button id="done-button" class="button pure-button" onclick="collectOptions()">Done</button>
 </div>
-<center>
-<input type="checkbox" value="Make public" class="css-checkbox"><p style="display:inline-block;" class="checkbox-text"> Make this biography public</p>
+<center id="check-c">
+<input type="checkbox" value="Make public" class="css-checkbox"><p style="display:inline-block;" class="checkbox-test"> Make this biography public</p>
 </center>
 </center>
 </body>
