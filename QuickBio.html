@@ -107,6 +107,7 @@ function findTextForTags(tags) {
 		}
 		if (tags[x] === "quotes") {
 			var quoteInfo = fbData.quotes.split(' - ');
+            console.log(quoteInfo);
 			var bioQuoteText = format(quoteString, {
 				quoteText: quoteInfo[0],
 				quoteAuthor: quoteInfo[1]
