@@ -367,8 +367,11 @@ function addSelect() {
 }
 
 function collectOptions() {
+    
     var optionDiv = document.getElementById('fb-data-options');
     var selects = optionDiv.getElementsByTagName('select');
+    var sections = optionDiv.getElementsByTagName('section');
+    
     
     var selectedItems = [];
     
@@ -377,6 +380,10 @@ function collectOptions() {
         select.style.display = 'none';
         var selected = select.options[select.selectedIndex].value;
         selectedItems[x] = selected;
+    }
+    
+    for (var x = 0; x < sections.length; x++) {
+        sections[x].style.display = 'none';
     }
     
     var existCount;
