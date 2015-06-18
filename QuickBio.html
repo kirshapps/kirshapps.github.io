@@ -75,7 +75,7 @@ var check = location.search.split('check=')[1];
 
 
 Array.prototype.isInArray = function (item) {
-    for (int x = 0; x < this.length; x++) {
+    for (var x = 0; x < this.length; x++) {
         if (this[x] === item) {
            return true; 
         }
