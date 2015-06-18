@@ -106,7 +106,7 @@ function findTextForTags(tags) {
 			handleText("gender", genderString, ["gender"],"genderString");
 		}
 		if (tags[x] === "quotes") {
-			var quoteInfo = fbData.quotes[0].split('-');
+			var quoteInfo = fbData.quotes[0].split(' - ', 2);
             console.log(quoteInfo[0]);
             console.log(quoteInfo[1]);
 			var bioQuoteText = format(quoteString, {
