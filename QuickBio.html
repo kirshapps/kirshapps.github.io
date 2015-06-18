@@ -404,10 +404,14 @@ function collectOptions() {
     document.getElementById('add-data-button').style.display = 'none';
     document.getElementById('done-button').style.display = 'none';
     
+    var d = document.createElement('div');
+    d.id = "bioDiv";
+    document.body.appendChild(d);
+    
     var bio = document.createElement('p');
     bio.innerHTML = endingString;
     bio.id = 'bio';
-    document.body.appendChild(bio);
+    d.innerHTML = bio;
 }
 
 </script>
@@ -429,6 +433,10 @@ function collectOptions() {
 }
 body {
   background-color: rgb(237,239,235);
+}
+#d {
+   width:300px;
+   height:300px;
 }
 .line-separator{
 height:1px;
