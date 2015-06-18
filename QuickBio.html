@@ -396,6 +396,9 @@ function collectOptions() {
     document.getElementById('add-data-button').style.display = 'none';
     document.getElementById('done-button').style.display = 'none';
     
+    var bio = document.createElement('p');
+    bio.innerHTML = endingString;
+    bio.insertAfter(document.getElementById('step1'));
 }
 
 </script>
