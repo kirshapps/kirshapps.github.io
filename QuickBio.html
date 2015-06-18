@@ -83,7 +83,6 @@ Array.prototype.isInArray = function (item) {
             
         }
     }
-    
     return false;
 }
     
@@ -103,7 +102,7 @@ function findTextForTags(tags) {
 			handleText("favorite_teams", teamStrings, ["team1", "team2", "team3"],"teamString");
 		}
 		if (tags[x] === "gender") {
-			handleText("gender", genderString, ["gender"],"genderString");
+            endingString = format(endingString, {genderString:format(genderString[0], {gender:fbData.gender})});
 		}
 		if (tags[x] === "quotes") {
 			var quoteInfo = fbData.quotes.split(' - ');
