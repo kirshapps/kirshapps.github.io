@@ -303,6 +303,7 @@ function startup() {
     document.getElementById('endingtext').style.display = 'none';
     document.getElementById('add-data-button').style.display = 'none';
     document.getElementById('done-button').style.display = 'none';
+    document.getElementById('check-c').style.display = 'none';
 
     if (checkLoginStatus()) {
         step2();
@@ -403,6 +404,7 @@ function collectOptions() {
     document.getElementById('endingtext').style.display = 'none';
     document.getElementById('add-data-button').style.display = 'none';
     document.getElementById('done-button').style.display = 'none';
+    document.getElementById('check-c').style.display = 'block';
     
     var center = document.createElement('center');
     document.body.appendChild(center);
@@ -555,6 +557,7 @@ label.css-label {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    font-family: 'Bree Serif', serif;
 }
 
 </style>
