@@ -405,11 +405,11 @@ function collectOptions() {
     document.getElementById('add-data-button').style.display = 'none';
     document.getElementById('done-button').style.display = 'none';
     
-  
+    var check = document.getElementById('mcheckbox');
     
     var d = document.createElement('div');
     d.id = "bioDiv";
-    document.getElementById('check-c').appendChild(d);
+    d.insertBefore(check);
     
     var bio = document.createElement('p');
     bio.innerHTML = endingString;
