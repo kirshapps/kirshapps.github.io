@@ -404,7 +404,6 @@ function collectOptions() {
     document.getElementById('endingtext').style.display = 'none';
     document.getElementById('add-data-button').style.display = 'none';
     document.getElementById('done-button').style.display = 'none';
-    document.getElementById('check-c').style.display = 'block';
     
     var center = document.createElement('center');
     document.body.appendChild(center);
@@ -417,6 +416,8 @@ function collectOptions() {
     bio.innerHTML = endingString;
     bio.id = 'bio';
     d.appendChild(bio);
+    
+    document.getElementById('check-c').style.display = 'block';
 }
 
 </script>
