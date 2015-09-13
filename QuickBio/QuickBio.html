@@ -405,18 +405,17 @@ function collectOptions() {
     document.getElementById('add-data-button').style.display = 'none';
     document.getElementById('done-button').style.display = 'none';
     
-    var check = document.getElementById('mcheckbox');
+    var checkc = document.getElementById("check-c");
     
     var d = document.createElement('div');
     d.id = "bioDiv";
-    d.insertBefore(check);
+    checkc.appendChild(d);
     
     var bio = document.createElement('p');
     bio.innerHTML = endingString;
     bio.id = 'bio';
     d.appendChild(bio);
     
-    document.getElementById('check-c').style.display = 'block';
 }
 
 </script>
@@ -523,42 +522,7 @@ select {
     select {padding-right:18px}
 }
     
-input[type=checkbox].css-checkbox {
-    position: absolute;
-    z-index: -1000;
-    left: -1000px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-}
-input[type=checkbox].css-checkbox + label.css-label {
-    padding-left: 32px;
-    height: 27px;
-    display: inline-block;
-    line-height: 27px;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    font-size: 27px;
-    vertical-align: middle;
-    cursor: pointer;
-}
-input[type=checkbox].css-checkbox:checked + label.css-label {
-    background-position: 0 -27px;
-}
-label.css-label {
-    background-image: url(http://csscheckbox.com/checkboxes/u/csscheckbox_bce24e972f9de57735350efff79f574c.png);
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    font-family: 'Bree Serif', serif;
-}
+
 
 </style>
 <title>Making your biography's simple since a long time ago</title>  
@@ -579,8 +543,7 @@ label.css-label {
 <button id="done-button" class="button pure-button" onclick="collectOptions()">Done</button>
 </div>
 <center id="check-c">
-<input type="checkbox" class="css-checkbox" id="mcheckbox">
-<label class="css-label" for="mcheckbox">Would you like this bio to be public?</label>
+
 </center>
 </center>
 </body>
